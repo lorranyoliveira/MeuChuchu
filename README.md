@@ -45,8 +45,8 @@ Co-authored-By: Lorrany Oliveira <lolo.souza80@yahoo.com>
 #1 - Criar documento de visão.
 ```
 ### Referências para documentação 
-* [AIX - Chatbot Python]{https://fga-eps-mds.github.io/2019.1-Aix/}
-* [HUBCARE ]{https://cjjcastro.gitlab.io/2019-1-hubcare-docs/}
-* [KalKuli ]{https://fga-eps-mds.github.io/2018.2-Kalkuli//}
+* [AIX - Chatbot Python](https://fga-eps-mds.github.io/2019.1-Aix/)
+* [HUBCARE ](https://cjjcastro.gitlab.io/2019-1-hubcare-docs/)
+* [KalKuli ](https://fga-eps-mds.github.io/2018.2-Kalkuli//)
 
  
