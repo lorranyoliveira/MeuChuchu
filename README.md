@@ -2,12 +2,13 @@
 <p aling= "justify"> &emsp;&emsp; 
 Meu chuchu é um aplicativo que tem como objetivo ajudar feirantes a terem mais visibilidade na procura de produtos alimentícios oriundos de feiras regionais e, com isso, aumentar suas vendas. </p>
 <p aling= "justify"> &emsp;&emsp; 
-Este documento tem como objetivo ajudar na padronização de algumas coisas. Alguns itens que o documento irá tratar:
-- Política de branchs;
-- Política de commits;
-- Política de pr;
-- Referências de documentação.  
-</p>
+Este documento tem como objetivo ajudar na padronização de algumas coisas. Alguns itens que o documento irá tratar:</p>
+
+* Política de branchs;
+* Política de commits;
+* Política de pr;
+* Referências de documentação.  
+
 
 ## Políticas 
 ### Política de branchs
@@ -44,8 +45,8 @@ Co-authored-By: Lorrany Oliveira <lolo.souza80@yahoo.com>
 #1 - Criar documento de visão.
 ```
 ### Referências para documentação 
-*[AIX - Chatbot Python]{https://fga-eps-mds.github.io/2019.1-Aix/}
-*[HUBCARE ]{https://cjjcastro.gitlab.io/2019-1-hubcare-docs/}
-*[KalKuli ]{https://fga-eps-mds.github.io/2018.2-Kalkuli//}
+* [AIX - Chatbot Python]{https://fga-eps-mds.github.io/2019.1-Aix/}
+* [HUBCARE ]{https://cjjcastro.gitlab.io/2019-1-hubcare-docs/}
+* [KalKuli ]{https://fga-eps-mds.github.io/2018.2-Kalkuli//}
 
  
