@@ -1,6 +1,6 @@
 ---
 name: Issue básica
-about: ''
+about: Template para issue báscia
 title: ''
 labels: ''
 assignees: ''
