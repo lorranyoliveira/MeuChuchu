@@ -2,7 +2,7 @@
 
 ## 2.1 Oportunidade de Negócios:
 
-Visando a conjuntura pandemica causada pelo COVID-19, apresentamos uma solução para auxiliar na procura de produtos alimentícios oriundos de feiras regionais. 
+Visando a conjuntura pandemica causada pelo COVID-19, apresentamos uma solução para auxiliar na procura de produtos alimentícios oriundos de feiras regionais, bem como a divulgação destes por parte dos produtores. 
 
 
 ## 2.2 Instrução do Problema: 
@@ -12,4 +12,4 @@ Devido a pandemia, vários estabelecimentos foram fechados em todo o país duran
 
 ## 2.3 Instrução de Posição do Produto:
 
-Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemi, o "Meu Chuchu" será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõe seus produtos nas feiras do Distrito Federal e entorno. 
+Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemia, o "Meu Chuchu" será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõem seus produtos nas feiras do Distrito Federal e entorno. 
