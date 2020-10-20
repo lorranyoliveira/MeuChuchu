@@ -2,7 +2,7 @@
 
 | Data | Versão | Descrição | Autor |
 |--|--|--|--|
-| 20/10/2020 | 0.1 | Tópico 1,1.1,1.2, 1.3,1.4,1.5| Daniela Soares |
+| 20/10/2020 | 0.3 | Tópico 1,1.1,1.2, 1.3,1.4,1.5| Daniela Soares |
 
 
 ## 1. Introdução
