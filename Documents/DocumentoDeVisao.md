@@ -1,5 +1,35 @@
 # Documento de visão
 
+| Data | Versão | Descrição | Autor |
+|--|--|--|--|
+| 20/10/2020 | 0.1 | Tópico 1,1.1,1.2, 1.3,1.4,1.5| Daniela Soares |
+
+
+## 1. Introdução
+
+A introdução fornece uma visão geral de todo o documento de visão. Ela inclui o propósito, escopo, definições, acrônimos, abreviações, referências e visão geral de todo o documento.
+
+### 1.1 Propósito
+
+Esse documento tem como propósito, apresentar uma visão geral do desenvolvimento do MeuChuchu, e visa auxiliar a compreensão do contexto no qual será inserido.
+
+### 1.2 Escopo
+
+De maneira sucinta, a problemática que tentaremos solucionar com este trabalho estará diretamente conectada à área de comercio de feiras na região do DF e entorno. MeuChuchu é um aplicativo com o objetivo de ajudar feirantes a terem mais visibilidade na procura de produtos alimentícios oriundos de feiras regionais e, com isso, aumentar suas vendas.
+
+### 1.3 Definições, acrônimos e abreviações
+
+* Play Store - É a loja oficial de apps para smartphones e tablets com sistema operacional Android. 
+
+### 1.4 Referências
+* [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/pt-br/SSYMRC_6.0.5/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.html)
+* [Aix - Chatbot](https://fga-eps-mds.github.io/2019.1-Aix/projeto/2019/03/29/documento-de-visao/)
+* [HubCare](https://cjjcastro.gitlab.io/2019-1-hubcare-docs/project/vision-document/)
+
+### 1.5 Visão Geral
+
+Desta forma, a ideia principal deste documento de visão é fornecer de maneira objetiva e organizada as características e utilidades da aplicação, além dos assuntos que tangem à problemática inicial, o posicionamento do produto, descrições da parte interessada e do usuário, Visão geral do produto, recursos e recursos do produto.
+
 ## 2. Posicionando
 
 ### 2.1 Oportunidade de Negócios:
@@ -14,7 +44,7 @@ Devido a pandemia, vários estabelecimentos foram fechados em todo o país duran
 
 ### 2.3 Instrução de Posição do Produto:
 
-Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemia, o "Meu Chuchu" será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõem seus produtos nas feiras do Distrito Federal e entorno. 
+Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemia, o "MeuChuchu" será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõem seus produtos nas feiras do Distrito Federal e entorno. 
 
 
 ## 3. Descrições da Parte Interessada e do Usuário
@@ -29,7 +59,7 @@ Equipe de Desenvolvimento | A equipe é composta por estudantes da disciplina de
 
 ### 3.2 Ambiente do Usuário
 
-O usuário poderá utilizar Meu Chuchu em dispositivos móveis com o sistema operacional Android, tendo em vista a praticidade de aplicações móveis e o grande número de usuários do sistema operacional citado.
+O usuário poderá utilizar MeuChuchu em dispositivos móveis com o sistema operacional Android, tendo em vista a praticidade de aplicações móveis e o grande número de usuários do sistema operacional citado.
 
 ### 3.3 Perfil do Usuário
 ### 3.3.1 Usuário vendedor
