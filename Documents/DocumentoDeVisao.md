@@ -2,6 +2,7 @@
 
 | Data | Versão | Descrição | Autor |
 |--|--|--|--|
+| 19/10/2020 | 0.2 | Tópico 4.1, 4.2, 4.3| Giovana Dionisio |
 | 20/10/2020 | 0.3 | Tópico 1,1.1,1.2, 1.3,1.4,1.5| Daniela Soares |
 
 
@@ -93,14 +94,15 @@ Encontrar produtos alimentícios tradicionalmente vendidos em feiras regionais.|
 
 ### 4.1 Perspectiva do Produto
 
-O MeuChuchu será um canal de divulgação voltado para feirantes. Potenciais compradores poderão visualizar os produtos e seus respectivos preços, a localização e os meios de contato daqueles que estiverem publicando suas bancas. O aplicativo irá exercer somente o papel de intermediador entre o feirante e o cliente, dando total liberdade para que o cliente escolha o meio de contato e permitindo que a negociação e questões relacionadas à retirada ou entrega de produto possam ser discutidas com o vendedor. 
+O MeuChuchu será um canal de divulgação voltado para feirantes. Potenciais clientes poderão visualizar os produtos e seus respectivos preços, a localização e os meios de contato daqueles que estiverem publicando suas bancas. O aplicativo irá exercer somente o papel de intermediador entre o usuário vendedor e o usuário comprador em potencial, dando total liberdade para que o usuário comprador escolha o meio de contato e permitindo que a negociação e questões relacionadas à retirada ou entrega de produto possam ser discutidas com o usuário vendedor. 
+
 ### 4.2 Resumo das Capacidades
 
 Benefícios para o usuário | Recursos de suporte
 :-------------------------------------:|:---------------------:
-Recursos básicos| O aplicativo disponibilizará funcionalidades básicas para o cliente, como a busca por produtos ou feirantes, uma página de favoritos para salvar as bancas de seu maior interesse e páginas de ajuda com tutoriais para a utilização da aplicação (que também estarão disponíveis para feirantes). 
-Liberdade para escolher como se comunicar | Haverá um espaço para o feirante informar os meios de contato que ele utiliza e os clientes poderão escolher qual destes meios utilizar
-Facilidade para encontrar feirantes próximos | A funcionalidade de localização do aplicativo permitirá que o cliente pesquise por feirantes próximos a ele
+Recursos básicos| O aplicativo disponibilizará funcionalidades básicas para o usuário comprador em potencial, como a busca por produtos ou feirantes, uma página de favoritos para salvar as bancas de seu maior interesse e páginas de ajuda com tutoriais para a utilização da aplicação (que também estarão disponíveis para usuários vendedores). 
+Liberdade para escolher como se comunicar | Haverá um espaço para o usuário vendedor informar os meios de contato que ele utiliza e os usuários compradores em potencial poderão escolher qual destes meios utilizar
+Facilidade para encontrar feirantes próximos | A funcionalidade de localização do aplicativo permitirá que o usuário comprador em potencial pesquise por feirantes próximos a ele
 
 
 ### 4.3 Custo e Precificação
