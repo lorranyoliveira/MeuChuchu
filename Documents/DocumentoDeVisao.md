@@ -2,8 +2,10 @@
 
 | Data | Versão | Descrição | Autor |
 |--|--|--|--|
-| 19/10/2020 | 0.2 | Tópico 4.1, 4.2, 4.3| Giovana Dionisio |
-| 20/10/2020 | 0.3 | Tópico 1,1.1,1.2, 1.3,1.4,1.5| Daniela Soares |
+| 19/10/2020 | 0.1 | Tópico 2| Sara Campos |
+| 19/10/2020 | 0.2 | Tópico 4| Giovana Dionisio |
+| 19/10/2020 | 0.3 | Tópico 3| Hérya |
+| 20/10/2020 | 0.4 | Tópico 1| Daniela Soares |
 
 
 ## 1. Introdução
