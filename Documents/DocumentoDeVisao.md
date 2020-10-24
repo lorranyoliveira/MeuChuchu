@@ -111,3 +111,15 @@ Facilidade para encontrar feirantes próximos | A funcionalidade de localizaçã
 
 O investimento para a publicação do aplicativo na Play Store será de 25 dólares. Entretanto o software será gratuito para os usuários. 
 
+## 5. Recursos do produto
+
+O meu chuchu é um aplicativo que deve ser capaz de tornar mais fácil o contato entre um feirante de alimentos com um possível cliente. Trazendo uma maior visibilidade de vendas para o feirante tendo como objetivo melhorar as suas vendas.
+
+## 6. Restrições 
+
+#### 6.1 Restrições de design
+
+O aplicativo deverá possuir interfaces que sejam de fácil entendimento para seus usuários. Sempre tendo uma interface de ajuda para possíveis dúvidas de acesso.
+
+### 6.2 Restrições de Implementação 
+O aplicativo será desenvolvido nas seguintes linguagens: javascript no frontend e python no backend.
