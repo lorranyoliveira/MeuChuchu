@@ -6,6 +6,7 @@
 | 19/10/2020 | 0.2 | Tópico 4| Giovana Dionisio |
 | 19/10/2020 | 0.3 | Tópico 3| Hérya |
 | 20/10/2020 | 0.4 | Tópico 1| Daniela Soares |
+| 24/10/2020 | 0.4 | Tópicos 5 e 6| Lorrany Oliveira |
 
 
 ## 1. Introdução
