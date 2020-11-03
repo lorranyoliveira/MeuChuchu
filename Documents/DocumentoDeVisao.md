@@ -7,11 +7,10 @@
 | 19/10/2020 | 0.3 | Tópico 3| Hérya |
 | 20/10/2020 | 0.4 | Tópico 1| Daniela Soares |
 | 24/10/2020 | 0.4 | Tópicos 5 e 6| Lorrany Oliveira |
+| 02/11/2020 | 1.0 | Revisão Geral | Toda a equipe |
 
 
 ## 1. Introdução
-
-A introdução fornece uma visão geral de todo o documento de visão. Ela inclui o propósito, escopo, definições, acrônimos, abreviações, referências e visão geral de todo o documento.
 
 ### 1.1 Propósito
 
@@ -31,24 +30,24 @@ De maneira sucinta, a problemática que tentaremos solucionar com este trabalho 
 * [HubCare](https://cjjcastro.gitlab.io/2019-1-hubcare-docs/project/vision-document/)
 
 ### 1.5 Visão Geral
-
-Desta forma, a ideia principal deste documento de visão é fornecer de maneira objetiva e organizada as características e utilidades da aplicação, além dos assuntos que tangem à problemática inicial, o posicionamento do produto, descrições da parte interessada e do usuário, Visão geral do produto, recursos e recursos do produto.
+Desta forma, a ideia principal deste documento  é fornecer de maneira objetiva e organizada as características e utilidades da aplicação, além dos assuntos que tangem à problemática inicial, o posicionamento do produto, descrições da parte interessada e do usuário, visão geral do produto e recursos do produto.
 
 ## 2. Posicionando
 
 ### 2.1 Oportunidade de Negócios:
 
-Visando a conjuntura pandemica causada pelo COVID-19, apresentamos uma solução para auxiliar na procura de produtos alimentícios oriundos de feiras regionais, bem como a divulgação destes por parte dos produtores. 
+Visando a conjuntura pandêmica causada pelo COVID-19, apresentamos uma solução para auxiliar na procura de produtos alimentícios oriundos de feiras regionais, bem como a divulgação destes por parte dos produtores. 
+ 
 
 
 ### 2.2 Instrução do Problema: 
 
-Devido a pandemia, vários estabelecimentos foram fechados em todo o país durante meses, inclusive as feiras locais, que acabaram com grandes prejuízos nas vendas. De acordo com uma matéria do Jornal de Brasília, cerca de 19 mil feirantes do DF ficaram desempregados após o fechamento do comércio e chegaram ainda a prejuízos de até 90%, como é citado em uma matéria do Brasil de Fato. Uma solução bem sucedida trará maior visibilidade aos feirantes, bem como um aumento nas vendas.
+Devido a pandemia, vários estabelecimentos foram fechados em todo o país durante meses, inclusive as feiras locais, que resultaram em grandes prejuízos nas vendas. De acordo com uma matéria do Jornal de Brasília, cerca de 19 mil feirantes do DF ficaram desempregados após o fechamento do comércio e chegaram ainda a prejuízos de até 90%, como é citado em uma matéria do Brasil de Fato. Uma solução bem sucedida trará maior visibilidade aos feirantes, bem como um aumento nas vendas.
 
 
 ### 2.3 Instrução de Posição do Produto:
 
-Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemia, o "MeuChuchu" será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõem seus produtos nas feiras do Distrito Federal e entorno. 
+Para os feirantes locais que sofreram e ainda estão sofrendo com as consequências da pandemia, o MeuChuchu será uma aplicação funcional que visa trazer um aumento do consumo regional em detrimento do consumo industrial, tendo ainda como inovação a abertura de oportunidades de divulgação melhores aos pequenos produtores que expõem seus produtos nas feiras do Distrito Federal e entorno.  
 
 
 ## 3. Descrições da Parte Interessada e do Usuário
@@ -97,7 +96,7 @@ Encontrar produtos alimentícios tradicionalmente vendidos em feiras regionais.|
 
 ### 4.1 Perspectiva do Produto
 
-O MeuChuchu será um canal de divulgação voltado para feirantes. Potenciais clientes poderão visualizar os produtos e seus respectivos preços, a localização e os meios de contato daqueles que estiverem publicando suas bancas. O aplicativo irá exercer somente o papel de intermediador entre o usuário vendedor e o usuário comprador em potencial, dando total liberdade para que o usuário comprador escolha o meio de contato e permitindo que a negociação e questões relacionadas à retirada ou entrega de produto possam ser discutidas com o usuário vendedor. 
+O MeuChuchu será um canal de divulgação voltado para feirantes. Potenciais clientes poderão visualizar os produtos e seus respectivos preços, a localização e os meios de contato daqueles que estiverem publicando suas bancas. O aplicativo irá exercer somente o papel de intermediador entre o usuário vendedor e o usuário comprador em potencial, dando total liberdade para que o usuário comprador escolha o meio de contato e permitindo que a negociação e questões relacionadas à retirada ou entrega de produto possam ser discutidas com o usuário vendedor.  
 
 ### 4.2 Resumo das Capacidades
 
@@ -114,7 +113,16 @@ O investimento para a publicação do aplicativo na Play Store será de 25 dóla
 
 ## 5. Recursos do produto
 
-O meu chuchu é um aplicativo que deve ser capaz de tornar mais fácil o contato entre um feirante de alimentos com um possível cliente. Trazendo uma maior visibilidade de vendas para o feirante tendo como objetivo melhorar as suas vendas.
+### 5.1 Acesso
+O usuário poderá realizar o acesso ao aplicativo.
+### 5.2 Cadastro
+O usuário poderá realizar o cadastro, o qual poderá escolher entre dois perfis, o de feirante ou o de consumidor.
+### 5.3 Localizar o feirante
+O usuário poderá localizar o feirante mais próximo do local onde ele está.
+### 5.4 Adicionar aos favoritos
+O usuário poderá adicionar uma banca como favorita.
+### 5.5 Buscar
+O usuário terá uma página de buscar, onde ele poderá buscar pelo que deseja.
 
 ## 6. Restrições 
 
@@ -123,4 +131,4 @@ O meu chuchu é um aplicativo que deve ser capaz de tornar mais fácil o contato
 O aplicativo deverá possuir interfaces que sejam de fácil entendimento para seus usuários. Sempre tendo uma interface de ajuda para possíveis dúvidas de acesso.
 
 ### 6.2 Restrições de Implementação 
-O aplicativo será desenvolvido nas seguintes linguagens: javascript no frontend e python no backend.
+O aplicativo será desenvolvido nas seguintes linguagens: React Native - utilizando a linguagem JavaScript - no frontend e Flask - utilizando a linguagem Python - no backend.
