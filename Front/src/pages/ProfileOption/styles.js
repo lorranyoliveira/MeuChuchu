@@ -1,12 +1,20 @@
-import React from 'react';
-import {View, Text} from 'react-native'; 
+import {StyleSheet} from 'react-native';
+import { fonts} from '../../styles/fonts';
 
-const ProfileOption = () => {
-    return(
-        <View style = {styles.card}>
-            <Text style = {styles.text}>Escolha o tipo de perfil que deseja criar</Text>
-        </View>
-    );
-};
+const styles = StyleSheet.create({
+    card: {
+        flex:1,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    text:{
+        textAlign: 'center',
+        //color: ''
+        fontSize: fonts.base,
+        fontFamily: 'Avenir-S',
+    } 
 
-export default ProfileOption;
+});
+
+export default styles;
+
