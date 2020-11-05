@@ -1,21 +1,23 @@
 import { StyleSheet} from 'react-native';
-//import { fonts, metrics} from '../../styles';
+import { colors, fonts, metrics} from '../../styles';
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 10,
-    padding: 18,
-    margin: 60,
+    borderRadius: metrics.baseRadius,
+    padding: metrics.baseMargin,
+    margin: metrics.baseMargin,
     justifyContent: 'space-between',
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: metrics.baseMargin * 10,
 
   },
 
   buttonText: {
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: fonts.base,
         fontWeight: 'bold',
+        color: colors.black,
+        
       },
 });
 

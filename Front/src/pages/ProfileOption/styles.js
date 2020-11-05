@@ -1,24 +1,28 @@
 import { StyleSheet } from 'react-native';
-//import { fonts } from '../../styles';
+import { fonts, metrics, colors} from '../../styles';
 
 const styles = StyleSheet.create({
     card: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
+      
+
     },
     cardButton:{
         alignItems: 'center',
-        flexDirection: 'column',
+        marginBottom: metrics.baseMargin  * 50,
+        
         
 
     },
     text: {
 
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: fonts.base,
         fontWeight: 'bold',
-        paddingTop: 150,
+        color: colors.black,
+        paddingTop: metrics.baseMargin * 20,
 
     }
 
