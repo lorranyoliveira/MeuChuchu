@@ -1,21 +1,22 @@
-import {StyleSheet} from 'react-native';
-import {fonts} from '../../styles/fonts'; 
-import {metrics} from '../../styles/metrics'; 
+import { StyleSheet} from 'react-native';
+//import { fonts, metrics} from '../../styles';
 
 const styles = StyleSheet.create({
-    button:{
-        borderRadius: metrics.borderRadius,
-        padding: metrics.baseMargin,
-        margin: metrics.baseMargin,
-        justifyContent: 'space-between',
-        alignSelf: 'center',
-    },
-    buttonText:{
+  button: {
+    borderRadius: 10,
+    padding: 18,
+    margin: 60,
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    marginTop: 20,
+
+  },
+
+  buttonText: {
         textAlign: 'center',
-        //color: ''
-        fontSize: fonts.base,
-        fontFamily: 'Avenir-S',
-    }
+        fontSize: 20,
+        fontWeight: 'bold',
+      },
 });
 
 export default styles;

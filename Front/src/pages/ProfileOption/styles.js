@@ -1,18 +1,26 @@
-import {StyleSheet} from 'react-native';
-import { fonts} from '../../styles/fonts';
+import { StyleSheet } from 'react-native';
+//import { fonts } from '../../styles';
 
 const styles = StyleSheet.create({
     card: {
-        flex:1,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    text:{
+    cardButton:{
+        alignItems: 'center',
+        flexDirection: 'column',
+        
+
+    },
+    text: {
+
         textAlign: 'center',
-        //color: ''
-        fontSize: fonts.base,
-        fontFamily: 'Avenir-S',
-    } 
+        fontSize: 25,
+        fontWeight: 'bold',
+        paddingTop: 150,
+
+    }
 
 });
 

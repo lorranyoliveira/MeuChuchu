@@ -1,13 +1,16 @@
 import React from 'react';
-import {TouchableOpacity, View, Text} from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles';
 
-const Button  = ({text, backgroundColor, width}) => (
-    <TouchableOpacity> 
-        <View style = {styles.button} width = {width} backgroundColor = {backgroundColor}>
-            <Text style = {styles.buttonText}>{text}</Text>
-        </View> 
-    </TouchableOpacity>
+const Button = ({
+  text, width, backgroundColor
+}) => (
+  <TouchableOpacity>
+    <View style={styles.button} width={width} backgroundColor={backgroundColor}>
+      <Text style={styles.buttonText}>{text}</Text>
+    </View>
+  </TouchableOpacity>
 );
 
 export default Button;

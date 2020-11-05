@@ -9,10 +9,14 @@ const ProfileOption = () => {
         <View style = {styles.card}>
             <Text style = {styles.text}>Escolha o tipo de perfil que deseja criar</Text>
             <Button
-                text = "Pessoal"
-                width = {250}
-                backgroundColor = "#FFF"
-    
+              text="Pessoal"
+              width={250}
+              backgroundColor= "#FFF"
+            />
+            <Button
+              text="Comercial"
+              width={250}
+              backgroundColor= "#FFF"
             />
         </View>
     );

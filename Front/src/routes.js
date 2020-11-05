@@ -9,7 +9,7 @@ import ProfileOption from './pages/ProfileOption';
 export default function Routes(){
     return(
         <NavigationContainer>
-            <AppStack.Navigator>
+            <AppStack.Navigator screenOptions={{headerShown: false}}>
                 <AppStack.Screen name="Profile Option" component={ProfileOption}/>
             </AppStack.Navigator>
         </NavigationContainer>
