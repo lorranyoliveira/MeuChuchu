@@ -1,5 +1,11 @@
+//este arquivo apresenta a estilização do componente botão
+
+//importações
+
 import { StyleSheet} from 'react-native';
 import { colors, fonts, metrics} from '../../styles';
+
+//declaração da estilização do botão
 
 const styles = StyleSheet.create({
   button: {
@@ -13,12 +19,12 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-        textAlign: 'center',
-        fontSize: fonts.base,
-        fontWeight: 'bold',
-        color: colors.white,
+      textAlign: 'center',
+      fontSize: fonts.base,
+      fontWeight: 'bold',
+      color: colors.white,
         
-      },
+  },
 });
 
 export default styles;

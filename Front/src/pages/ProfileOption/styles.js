@@ -1,5 +1,11 @@
+//este arquivo apresenta a estilização da tela ProfileOption
+
+//importações
+
 import { StyleSheet } from 'react-native';
 import { fonts, metrics, colors} from '../../styles';
+
+//declaração da estilização da tela ProfileOption
 
 const styles = StyleSheet.create({
     card: {

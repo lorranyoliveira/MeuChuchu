@@ -1,3 +1,7 @@
+//este arquivo apresenta a estrutura da tela ProfileOption
+
+//importações
+
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -5,6 +9,7 @@ import Button from '../../components/Button';
 import { colors } from '../../styles';
 import styles from './styles';
 
+// declaração da estrutura da tela ProfileOption 
 
 const ProfileOption = () => {
     return (

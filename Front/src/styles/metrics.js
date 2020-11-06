@@ -1,4 +1,8 @@
+//importações
+
 import { Dimensions } from 'react-native';
+
+//declaração da métricas utilizadas na estilização
 
 const { width, height } = Dimensions.get('window');
 

@@ -1,3 +1,5 @@
+// declaração da cores utilizadas na estilização
+
 const colors ={
 primaryGreen: '#3E782B',
 lightGrey: '#EEE7E7',
