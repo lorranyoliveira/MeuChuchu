@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Button from '../../components/Button';
 import { colors } from '../../styles';
 import styles from './styles';
@@ -13,12 +14,12 @@ const ProfileOption = () => {
                 <Button
                     text="Pessoal"
                     width={250}
-                    backgroundColor="#FFF"
+                    backgroundColor= {colors.primaryGreen}
                 />
                 <Button
                     text="Comercial"
                     width={250}
-                    backgroundColor= "#FFF"
+                    backgroundColor= {colors.primaryGreen}
                 />
             </View>
         </View>

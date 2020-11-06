@@ -6,14 +6,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-      
+        backgroundColor: colors.lightGrey,
 
     },
     cardButton:{
         alignItems: 'center',
         marginBottom: metrics.baseMargin  * 50,
-        
-        
 
     },
     text: {
