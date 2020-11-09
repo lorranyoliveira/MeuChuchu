@@ -7,7 +7,7 @@
 ## 3.Metas e Restrições de Arquitetura
 
 São metas da arquitetura:
-* Disponibilizar ao usuário consulmidor em potencial uma aplicação para maior identificação com a banca do feirante
+* Disponibilizar ao usuário consumidor em potencial uma aplicação para maior identificação com a banca do feirante
 * Disponiblizar a aplicação para dispositivos Android
 * Disponibilizar interface para usuário feirante
 
