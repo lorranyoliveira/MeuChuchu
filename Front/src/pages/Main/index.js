@@ -1,5 +1,11 @@
+//este arquivo apresenta a estrutura da tela Main
+
+//importações
+
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
+//declaração da estrutura da tela Main
 
 const styles = StyleSheet.create({
   container: {
