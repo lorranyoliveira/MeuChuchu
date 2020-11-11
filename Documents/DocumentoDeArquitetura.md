@@ -4,6 +4,24 @@
 |--|--|--|--|
 | 09/11/2020 | 0.1 | Tópico 3| Daniela Soares |
 | 10/11/2020 | 0.2 | Tópico 5| Giovana Dionisio |
+| 10/11/2020 | 0.3 | Tópico 2| Hérya Rodrigues |
+
+## 2. Representação da Arquitetura
+
+### 2.1 Diagrama de relações
+
+![Diagrama de Relações](https://i.ibb.co/xqbLHHK/diagrama-rela-es.png)
+### 2.1.1 Flask
+
+Flask é um *microframework* para linguagem Python. Por padrão, seu núcleo conta apenas com os módulos necessários à criação da aplicação. Assim, é um *microframework* simples, mas extensível e flexível. 
+
+### 2.1.2 React Native
+
+React Native é um *framework open source* para construção de aplicativos nativos para Android e iOS, utilizando JavaScript. Dessa forma, o código da aplicação é escrito em JavaScript, mas renderizado em código nativo. 
+
+### 2.1.3 PostgreSQL
+
+PostgreSQL é um sistema de gerenciamento de banco de dados relacional *open source*, com ênfase em extensibilidade e conformidade com SQL.
 
 ## 3.Metas e Restrições de Arquitetura
 
