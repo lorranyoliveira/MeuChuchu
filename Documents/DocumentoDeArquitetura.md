@@ -59,7 +59,7 @@ São restrições de arquitetura:
 * Banco de dados relacional fazendo uso de PostgreSQL.
 * Possuir uma API que siga os princípios REST.
 
-# Visão de casos de uso
+## 4. Visão de casos de uso
 
 No diagrama, observa-se um modelo simplificado de casos de uso. São definidos os dois tipos de usuários como atores e as respectivas ações que eles poderão realizar dentro do aplicativo.  
 
