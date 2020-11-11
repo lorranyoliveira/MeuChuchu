@@ -11,12 +11,19 @@ const styles = StyleSheet.create({
     Name:{
         fontSize: fonts.title,
         fontWeight: 'bold',
-        paddingBottom: metrics.baseMargin,
-
+        paddingBottom: metrics.baseMargin*0,
+       // margin: metrics.baseMargin * 20,
     },
     Botton:{
+        //alignItems: 'center',
+        marginBottom: metrics.baseMargin * 30,
+    },
+    Photo:{
         alignItems: 'center',
-        marginBottom: metrics.baseMargin * 50,
+        margin: metrics.baseMargin * 20,
+        width: 200, 
+        height: 200, 
+        borderRadius: 200/ 2, 
     }
 });
 
