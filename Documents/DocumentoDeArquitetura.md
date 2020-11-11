@@ -6,6 +6,8 @@
 | 10/11/2020 | 0.2 | Tópico 5| Giovana Dionisio |
 | 10/11/2020 | 0.3 | Tópico 2| Hérya Rodrigues |
 | 10/11/2020 | 0.4 | Tópico 1| Lorrany Oliveira |
+| 11/11/2020 | 0.5 | Tópico 4| Sara Campos |
+
 
 
 ## 1. Introdução
@@ -57,6 +59,12 @@ São restrições de arquitetura:
 * Banco de dados relacional fazendo uso de PostgreSQL.
 * Possuir uma API que siga os princípios REST.
 
+# Visão de casos de uso
+
+No diagrama, observa-se um modelo simplificado de casos de uso. São definidos os dois tipos de usuários como atores e as respectivas ações que eles poderão realizar dentro do aplicativo.  
+
+![Diagrama de casos de uso](https://i.ibb.co/SsKytJF/caso-de-uso.png)
+  
 ## 5. Visão Lógica
 ### 5.1 Diagrama de Pacotes
 ![Front](https://i.ibb.co/k92QktX/Vis-o-L-gica-Front.jpg)  
