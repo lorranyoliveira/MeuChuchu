@@ -6,6 +6,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Button from '../../components/Button';
+import HelpButton from '../../components/HelpButton';
 import { colors } from '../../styles';
 import styles from './styles';
 
@@ -14,6 +15,7 @@ import styles from './styles';
 const ProfileOption = () => {
     return (
         <View style={styles.card}>
+            <HelpButton/>
             <Text style={styles.text}>Escolha o tipo de perfil que deseja criar</Text>
             <View style={styles.cardButton}>
                 <Button
