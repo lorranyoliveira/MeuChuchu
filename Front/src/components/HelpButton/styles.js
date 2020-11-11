@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
   button: {
     color: colors.primaryGreen,
     top: 11,
-    right: -170,
+    right: -180,
+    position : 'absolute'
   }
 
 });
