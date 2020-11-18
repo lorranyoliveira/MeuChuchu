@@ -7,6 +7,8 @@
 | 10/11/2020 | 0.3 | Tópico 2| Hérya Rodrigues |
 | 10/11/2020 | 0.4 | Tópico 1| Lorrany Oliveira |
 | 11/11/2020 | 0.5 | Tópico 4| Sara Campos |
+| 18/11/2020 | 1.0 | Revisão Geral| Daniela Soares e Lorrany Oliveira |
+
 
 
 
@@ -18,7 +20,7 @@ O presente documento tem como finalidade expor uma visão geral sobre a arquitet
 
 ### 1.2 Escopo
 
-MeuChuchu é um aplicativo focado em auxiliar um comprador em potencial a localizar o feirante mais próximo do local onde ele se encontra. Com isso, o atual documento O possui informações acerca das decisões tomadas pelo grupo sobre a organização da arquitetura do aplicativo.
+MeuChuchu é um aplicativo com o objetivo de ajudar feirantes a terem mais visibilidade na exposição de produtos alimentícios oriundos de feiras regionais. Com isso, o atual documento possui informações acerca das decisões tomadas pelo grupo sobre a organização da arquitetura do aplicativo.
 
 ### 1.3 Definições, Acrônimos e Abreviações
 *API : Application Programming Interface
@@ -36,11 +38,11 @@ MeuChuchu é um aplicativo focado em auxiliar um comprador em potencial a locali
 ![Diagrama de Relações](https://i.ibb.co/xqbLHHK/diagrama-rela-es.png)
 ### 2.1.1 Flask
 
-Flask é um *microframework* para linguagem Python. Por padrão, seu núcleo conta apenas com os módulos necessários à criação da aplicação. Assim, é um *microframework* simples, mas extensível e flexível. 
+Flask é um *microframework* para linguagem Python, baseado em Jinja 2, Werkzeug e good intentions. Por padrão, seu núcleo conta apenas com os módulos necessários à criação da aplicação. Assim, é um *microframework* simples, mas extensível e flexível.  Como Flask não possui uma ferramenta padrão para mapeamento objeto-relacional, será usado a extensão Flask-SQLAlchemy juntamente com a biblioteca Psycopg2. Para garantir as boas práticas de padrão de APIs RESTful, será utilizado a extensão Flask-RESTful para a criação de uma API em Flask que seja consistente.
 
 ### 2.1.2 React Native
 
-React Native é um *framework open source* para construção de aplicativos nativos para Android e iOS, utilizando JavaScript. Dessa forma, o código da aplicação é escrito em JavaScript, mas renderizado em código nativo. 
+React Native é um *framework open source* para construção de aplicativos nativos para Android e iOS, utilizando JavaScript. Dessa forma, o código da aplicação é escrito em JavaScript, mas renderizado em código nativo. Tendo como proposito manter uma base única de código para distribuição de código multiplataforma. A criação da interface se baseia na JSX, dialeto de JavaScript que procura se assimilar ao HTML, para criação de componentes reutilizáveis.
 
 ### 2.1.3 PostgreSQL
 
