@@ -8,12 +8,14 @@ const AppStack = createStackNavigator();
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import ConsumerRegister from './pages/ConsumerRegister';
+import FeiranteRegister from './pages/FeiranteRegister';
+import storeInformations from './pages/storeInformations';
 
 export default function Routes(){
     return(
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="ConsumerRegister" component={ConsumerRegister}/>
+                <AppStack.Screen name="storeInformations" component={storeInformations}/>
             </AppStack.Navigator>
         </NavigationContainer>
 
