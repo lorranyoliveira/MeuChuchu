@@ -7,6 +7,7 @@ const AppStack = createStackNavigator();
 //import ProfileOption from './pages/ProfileOption';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
+import ConsumerRegister from './pages/ConsumerRegister';
 
 export default function Routes(){
     return(

@@ -19,8 +19,21 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         width: '100%',
         paddingLeft: 20,
-        paddingRight: 20
-
+        paddingRight: 20,
+        paddingTop: 50
+    },
+    textos:{
+        fontSize: 20,
+    },
+    MeuChuchu:{
+        color : colors.primaryGreen,
+        fontSize : 35,
+    },
+    Container3:{
+        flex: 1,
+        alignItems: 'center',
+        width: '100%',
+        paddingTop: 50,
     },
     
 });

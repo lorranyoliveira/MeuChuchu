@@ -10,7 +10,7 @@ const Login = () => {
     const [text, setText] = React.useState('');
     return (
         <View style={styles.Container}>
-            <Text style={styles.MeuChuchu}>Meu Chuchu</Text>
+            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
             <View style={styles.Container2}>
                 <Text style={styles.Login}>Login:</Text>
                 <Input

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Input } from 'react-native-elements';
-import Button from '../../components/Button';
+import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -11,35 +11,38 @@ const ConsumerRegister = () => {
 
     return (
         <View style={styles.Container}>
+            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
             <View style={styles.Container2}>
-                <Text>Nome completo</Text>
-                {/* <Input
+                <Text style={styles.textos}>Nome completo</Text>
+                <Input
                     style={styles.Input}
                     onChangeText={name => setText(name)}
-                /> */}
-                <Text>Celular</Text>
-                {/* <Input
+                />
+                <Text style={styles.textos}>Celular</Text>
+                <Input
                     style={styles.Input}
                     onChangeText={cellphone => setText(cellphone)}
-                /> */}
-                <Text>Email</Text>
-                {/* <Input
+                />
+                <Text style={styles.textos}>Email</Text>
+                <Input
                     style={styles.Input}
                     onChangeText={email => setText(email)}
-                /> */}
-                <Text>Senha</Text>
-                {/* <Input
+                />
+                <Text style={styles.textos}>Senha</Text>
+                <Input
                     style={styles.Input}
                     onChangeText={password => setText(password)}
                     secureTextEntry={true}
 
-                /> */}
+                />
+                <View style={styles.Container3}>
+                    <Button2 style={styles.Botton}
+                        text="Cadastrar"
+                        width={200}
+                        backgroundColor={colors.primaryGreen}
+                    />
+                </View>
             </View>
-            <Button2 style={styles.Botton}
-                text="Cadastrar"
-                width={200}
-                backgroundColor={colors.primaryGreen}
-            />
 
         </View>
     );
