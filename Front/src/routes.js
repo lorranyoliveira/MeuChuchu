@@ -1,3 +1,5 @@
+// este arquivo apresenta as rotas da aplicação
+
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -10,6 +12,9 @@ import Login from './pages/Login';
 import ConsumerRegister from './pages/ConsumerRegister';
 import FeiranteRegister from './pages/FeiranteRegister';
 import storeInformations from './pages/storeInformations';
+
+
+//declaração das páginas de navegação
 
 export default function Routes(){
     return(
