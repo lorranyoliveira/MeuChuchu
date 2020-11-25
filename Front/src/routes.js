@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import ConsumerRegister from './pages/ConsumerRegister';
 import FeiranteRegister from './pages/FeiranteRegister';
 import storeInformations from './pages/storeInformations';
-
 export default function Routes(){
     return(
         <NavigationContainer>

@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { useState } from "react";
+import { View, Picker, StyleSheet } from "react-native";
+import { Text } from 'react-native';
+// import { Picker } from '@react-native-community/picker'
 import { Input } from 'react-native-elements';
 import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
 
+
 const storeInformations = () => {
-    const [text, setText] = React.useState('');
+    const [text, setText, selectedValue, setSelectedValue] = useState("Acougue");
 
     return (
         <View style={styles.Container}>
@@ -23,10 +27,22 @@ const storeInformations = () => {
                     onChangeText={address => setText(address)}
                 />
                 <Text style={styles.textos}>Categoria</Text>
-                <Input
-                    style={styles.Input}
-                    onChangeText={email => setText(email)}
-                />
+                <Picker
+                    selectedValue={text}
+                    style={styles.pickerComponente}
+                    onValueChange={(itemValue, itemIndex) => setText(itemValue)}
+                >
+
+                    <Picker.Item label="Selecione uma categoria" value=" " />
+                    <Picker.Item label="Acougue" value="Acougue" />
+                    <Picker.Item label="Bebidas" value="Bebidas" />
+                    <Picker.Item label="Cereais/Grão" value="Cereais/Grão" />
+                    <Picker.Item label="Doces" value="Doces" />
+                    <Picker.Item label="Frutas/Verduras" value="Frutas/Verduras" />
+                    <Picker.Item label="Massas" value="Massas" />
+                    <Picker.Item label="Tempero" value="Tempero" />
+
+                </Picker>
                 <View style={styles.Container3}>
                     <Button2 style={styles.Botton}
                         text="Cadastrar"
