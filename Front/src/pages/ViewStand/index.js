@@ -7,6 +7,7 @@ import styles from './styles';
 // import MateriaCommunityIcons from 'react-native-elements';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import HelpButton from '../../components/HelpButton';
 
 //<ion-icon name="chevron-back-outline"></ion-icon>
 //<Ionicons name="chevron-back-outline" size = {24} style={styles.backbutton}/>
@@ -14,32 +15,31 @@ import { Ionicons } from '@expo/vector-icons';
 const ViewStand = () => {
     return (
         <View style={styles.Container}>
-           <View style={styles.Container2}>
-                <TouchableOpacity>
-                    <View style={styles.backbutton}>
+            <View style={styles.Container2}>
+                <View style = {styles.BackPos}>
+                    <TouchableOpacity>
                         <MaterialCommunityIcons
                             name = "chevron-left" 
-                            size = {100}
-                            color= {colors.primaryGreen}
+                            size = {70}
+                            style= {styles.BackButton}
                         />
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.HelpButton}>
+                   <HelpButton/> 
+                </View>
+            </View>
+
+            <View style={styles.PlusPos}>
                 <TouchableOpacity>
-                    <View style={styles.Icon}>
-                        <MaterialCommunityIcons 
-                            name="plus-circle" 
-                            size = {30} 
-                            color= {colors.primaryGreen}
-                        />
-                    </View>
+                    <MaterialCommunityIcons 
+                        name="plus-circle" 
+                        size = {30} 
+                        style={styles.PlusButton}
+                    />
                 </TouchableOpacity>
             </View>
-            <View style={styles.Container3}>
-                <Image
-                    style={styles.Photo}
-                    source={require('../../image/photo.jpg')}
-                />
-            </View>
+
             <View style={{ flex: 4, }}>
                 <Button style={styles.Botton}
                     text="Contate o vendedor"
@@ -47,7 +47,6 @@ const ViewStand = () => {
                     backgroundColor={colors.primaryGreen}
                 />
             </View>
-
         </View>
     );
 };

@@ -12,39 +12,50 @@ const styles = StyleSheet.create({
     Name:{
         fontSize: fonts.title,
         fontWeight: 'bold',
-        paddingBottom: metrics.baseMargin*0,
+        paddingBottom: metrics.baseMargin * 0,
     },
     Botton:{
         //alignItems: 'center',
         marginBottom: metrics.baseMargin * 40,
     },
     Photo:{
-        alignItems: 'center',
-        margin: metrics.baseMargin * 10,
-        width: 200, 
-        height: 200, 
-        borderRadius: 200/ 2, 
+        marginTop: metrics.baseMargin,
+        width: metrics.baseMargin * 35, 
+        height: metrics.baseMargin * 35, 
+        borderRadius: metrics.baseMargin * 17.5, 
     }, 
     Container2:{
-        alignItems: 'flex-end',
+        marginTop: metrics.baseMargin * 10,
+        flexDirection: 'row',
+        alignItems: 'center',
         width: '100%',
-        paddingRight: 20,
     },
     Container3:{
         alignItems: 'center',
     },
-    Icon:{
-        flexDirection: 'row',
+    PlusButton:{
         alignSelf: 'flex-end',
-        marginEnd: metrics.baseMargin * 18,
         color: colors.primaryGreen,
         
     },
-    backbutton:{
+    PlusPos:{
+        marginTop: metrics.baseMargin * 5,
+        marginEnd: metrics.baseMargin * 18,
+    },
+    BackButton:{
+        flexDirection: 'row',
         alignSelf: 'flex-start',
-        marginStart: metrics.baseMargin * 10,
         color: colors.primaryGreen,
-        paddingTop: 5,
+    },
+    BackPos:{
+        marginTop: metrics.baseMargin * 0,
+        marginRight: metrics.baseMargin * 68,
+        position : 'absolute'
+    },
+    HelpButton:{
+        marginTop: metrics.baseMargin * 0,
+        marginLeft: metrics.baseMargin * 78,
+        position : 'absolute'
     }
     
 });

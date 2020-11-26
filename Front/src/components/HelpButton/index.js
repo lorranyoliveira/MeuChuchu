@@ -5,14 +5,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 //declaração do componente botão
 
-const HelpButton = ({
-  
-}) => (
+const HelpButton = ({}) => (
+  <View>
     <TouchableOpacity>
-      <View>
-        <Ionicons name="ios-help" size = {100} style={styles.button}/>
-      </View>
+      <Ionicons name="ios-help" size = {90} style={styles.Button}/>
     </TouchableOpacity>
+  </View>
 );
 
 export default HelpButton;
