@@ -7,9 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const HelpButton = ({}) => (
   <View>
-    <TouchableOpacity>
       <Ionicons name="ios-help" size = {90} style={styles.Button}/>
-    </TouchableOpacity>
   </View>
 );
 
