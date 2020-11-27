@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         borderRadius: metrics.baseMargin * 17.5, 
     }, 
     Container2:{
-        marginTop: metrics.baseMargin * 10,
+        marginTop: metrics.baseMargin * 0,
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
