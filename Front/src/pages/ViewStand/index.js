@@ -11,7 +11,7 @@ import { useFonts} from '@expo-google-fonts/inter';
 import { AppLoading } from 'expo';
 
 export default function ViewStand(){
-    const id =  2
+    const id =  1
     const [modalContactOpen, setModalContactOpen] = useState(false);
     const [modalHelpOpen, setModalHelpOpen] = useState(false);
 
@@ -52,25 +52,34 @@ export default function ViewStand(){
 
           <View >
             <Modal visible ={modalContactOpen} animationType = 'slide'>
-              <View style = {styles.modalContent}>
-                <View style={styles.ButtonPos}>
-                  </View>
-                    <Text>Contatos:</Text>
-                      <FlatList
-                        data={data}
-                        keyExtractor={(item) => item.id.toString()} 
-                        renderItem={({ item }) => (
-                        <Text style={styles.Name}> Email:{item.email}</Text>
-                        )}
-                    />
-                    <View style={styles.ClosePos}>
-                      <TouchableOpacity onPress = {() => setModalContactOpen(false)}>
-                        <MaterialCommunityIcons
-                              name = "close-circle" 
-                              size = {50}
-                              style= {styles.CloseButton}
-                        />
-                      </TouchableOpacity>
+              <View style = {styles.ModalContacts}>
+                <View style = {styles.PosContactsTitle}>
+                  <Text style = {styles.ContactsTitle}>Contatos:</Text>
+                </View>
+                <View style = {styles.ContactsPos}>
+                  <FlatList 
+                    data={data}
+                    keyExtractor={(item) => item.id.toString()} 
+                    renderItem={({ item }) => (
+                    <Text style={styles.Contacts}> 
+                       Email: {item.email}{"\n"}{"\n"}{"\n"}
+                       Celular: {item.celular}{"\n"}{"\n"}{"\n"}
+                       Instagram: {item.instagram}{"\n"}{"\n"}{"\n"}
+                       Facebook: {item.facebook}{"\n"}{"\n"}{"\n"}
+                       Website: {item.website}{"\n"}
+                    </Text>
+                    )}
+                  />
+                </View>
+                  
+                  <View style={styles.ClosePos}>
+                    <TouchableOpacity onPress = {() => setModalContactOpen(false)}>
+                      <MaterialCommunityIcons
+                            name = "close-circle" 
+                            size = {50}
+                            style= {styles.CloseButton}
+                      />
+                    </TouchableOpacity>
                   </View>
               </View>  
             </Modal> 

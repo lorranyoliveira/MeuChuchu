@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     NamePos:{
         flexDirection: 'row',
-        marginTop: metrics.baseMargin * 50,
+        marginTop: metrics.baseMargin * 47,
         marginLeft: metrics.baseMargin * 5,
         //flex: 1, 
         //padding: 24,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     CategoryPos:{
         flexDirection: 'row',
-        marginTop: metrics.baseMargin * 60,
+        marginTop: metrics.baseMargin * 57,
         marginLeft: metrics.baseMargin * 5,
         position: 'absolute'
     },
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
         margin: metrics.baseMargin,
         justifyContent: 'space-between',
         alignSelf: 'center',
-        marginTop: metrics.baseMargin * 57,
         backgroundColor: colors.primaryGreen,
     },
     ButtonPos:{
         flexDirection: 'row',
         //alignItems: 'center',
+        marginTop: metrics.baseMargin * 63,
         marginBottom: metrics.baseMargin * 67,
-        //position: 'absolute'
+        position: 'absolute'
     },
     ButtonText: {
         textAlign: 'center',
@@ -78,14 +78,40 @@ const styles = StyleSheet.create({
     Container3:{
         alignItems: 'center',
     },
-    modalContent:{
+    ModalContacts:{
+        //marginTop: metrics.baseMargin * 5,
         flex:1,
+        justifyContent: 'space-between',
+        //position: 'absolute',
+    },
+    PosContactsTitle:{
+        position: 'absolute',
+        marginTop: metrics.baseMargin * 5,
+        marginLeft: metrics.baseMargin * 2,
+    },
+    ContactsTitle:{
+        fontSize: fonts.title,
+        color: colors.primaryGreen,
+        textAlign: 'left',
+    },
+    ContactsPos:{
+        marginTop: metrics.baseMargin * 19,
+        marginLeft: metrics.baseMargin * 2,
+        flex:1,
+        //justifyContent: 'space-between',
+        //position: 'absolute',
+    },
+    Contacts:{
+        fontSize: fonts.title/1.5,
+        color: colors.black,
+        textAlign: 'left',
     },
     CloseButton:{
         alignSelf: 'flex-end',
         color: colors.primaryGreen,
     },
     ClosePos :{
+        marginLeft: metrics.baseMargin * 0,
         marginTop: metrics.baseMargin * 5,
         alignSelf: 'flex-end',
         alignItems: 'center',
