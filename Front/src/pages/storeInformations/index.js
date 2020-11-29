@@ -2,11 +2,12 @@ import React from 'react';
 import { useState } from "react";
 import { View, Picker, StyleSheet } from "react-native";
 import { Text } from 'react-native';
-// import { Picker } from '@react-native-community/picker'
 import { Input } from 'react-native-elements';
 import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
+import Header from '../../components/header';
+
 
 
 const storeInformations = () => {
@@ -14,7 +15,9 @@ const storeInformations = () => {
 
     return (
         <View style={styles.Container}>
-            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
+            <Header>
+
+            </Header>
             <View style={styles.Container2}>
                 <Text style={styles.textos}>Nome da loja</Text>
                 <Input
