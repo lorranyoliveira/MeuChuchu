@@ -8,6 +8,7 @@ const AppStack = createStackNavigator();
 //import Main from'./pages/Main';
 //import ProfileOption from './pages/ProfileOption';
 import Profile from './pages/Profile';
+import Login from './pages/Login';
 
 
 //declaração das páginas de navegação
@@ -16,7 +17,7 @@ export default function Routes(){
     return(
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="Profile" component={Profile}/>
+                <AppStack.Screen name="Login" component={Login}/>
             </AppStack.Navigator>
         </NavigationContainer>
 
