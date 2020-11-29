@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     Input:{
         paddingTop:10,
         alignItems: 'center',
-        
     },
     Container2:{
         flex: 1,
@@ -20,20 +19,16 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 50
+        paddingTop: 30
     },
     textos:{
-        fontSize: 20,
-    },
-    MeuChuchu:{
-        color : colors.primaryGreen,
-        fontSize : 35,
+        fontSize: 18,
     },
     Container3:{
         flex: 1,
         alignItems: 'center',
         width: '100%',
-        paddingTop: 50,
+        paddingTop: 30,
     },
     
 });

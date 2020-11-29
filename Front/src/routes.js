@@ -10,11 +10,12 @@ import Login from './pages/Login';
 import ConsumerRegister from './pages/ConsumerRegister';
 import FeiranteRegister from './pages/FeiranteRegister';
 import storeInformations from './pages/storeInformations';
+import header from'./components/header';
 export default function Routes(){
     return(
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="storeInformations" component={storeInformations}/>
+                <AppStack.Screen name="ConsumerRegister" component={ConsumerRegister}/>
             </AppStack.Navigator>
         </NavigationContainer>
 
