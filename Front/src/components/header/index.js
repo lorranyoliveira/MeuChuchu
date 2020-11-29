@@ -7,6 +7,12 @@ import { colors } from '../../styles';
 
 
 export default function Header() {
+    const ajuda = () =>{
+
+    }
+    const voltar = () =>{
+
+    }
     return (
         <View style={styles.header}>
             <View style={styles.help}>
@@ -14,6 +20,7 @@ export default function Header() {
                     name="help"
                     size={24}
                     color={colors.primaryGreen}
+                    onPress={ajuda}
                 />
             </View>
             <View style={styles.teste}>
@@ -21,6 +28,8 @@ export default function Header() {
                     name="arrowleft"
                     size={24}
                     color={colors.primaryGreen}
+                    onPress={voltar}
+
                 />
             </View>
             <Text style={styles.headerText}>MeuChuchu</Text>
