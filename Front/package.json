@@ -9,9 +9,15 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/picker": "1.6.6",
     "@react-navigation/native": "^5.8.4",
+<<<<<<< HEAD
+    "@react-navigation/stack": "^5.12.8",
+    "axios" : "^0.21.0" ,
+=======
     "@react-navigation/stack": "^5.12.1",
     "axios": "^0.21.0",
+>>>>>>> dea8b49ef1b03ae3769f8df32612a6f156c4dd4d
     "expo": "^39.0.5",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",

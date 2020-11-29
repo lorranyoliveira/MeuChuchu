@@ -9,30 +9,32 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightPink,
         paddingTop: 30,
     },
-    Name:{
-        fontSize: fonts.title,
-        fontWeight: 'bold',
-        paddingBottom: metrics.baseMargin*0,
-    },
-    Botton:{
-        //alignItems: 'center',
-        marginBottom: metrics.baseMargin * 40,
-    },
-    Photo:{
+    Input:{
+        paddingTop:10,
         alignItems: 'center',
-        margin: metrics.baseMargin * 10,
-        width: 200, 
-        height: 200, 
-        borderRadius: 200/ 2, 
-    }, 
+        
+    },
     Container2:{
-        alignItems: 'flex-end',
+        flex: 1,
+        alignItems: 'flex-start',
         width: '100%',
+        paddingLeft: 20,
         paddingRight: 20,
+        paddingTop: 30
+    },
+    textos:{
+        fontSize: 18,
+    },
+    MeuChuchu:{
+        color : colors.primaryGreen,
+        fontSize : 35,
     },
     Container3:{
+        flex: 1,
         alignItems: 'center',
-    }
+        width: '100%',
+        paddingTop: 25,
+    },
     
 });
 
