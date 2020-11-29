@@ -7,8 +7,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 const AppStack = createStackNavigator();
 //import Main from'./pages/Main';
 //import ProfileOption from './pages/ProfileOption';
-import Profile from './pages/Profile';
 //import ViewStand from './pages/ViewStand';
+import Profile from './pages/Profile';
 import Login from './pages/Login';
 
 //declaração das páginas de navegação
