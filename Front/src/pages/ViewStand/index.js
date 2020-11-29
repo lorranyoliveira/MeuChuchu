@@ -1,29 +1,36 @@
 import  React, {useState, useEffect} from 'react';
-import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Button, Alert, Modal} from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Button, Alert, Modal, Linking} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 //import Button from '../../components/Button';
-import { colors } from '../../styles';
+import { colors, metrics } from '../../styles';
 import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HelpButton from '../../components/HelpButton';
 import api from '../../services/api'
 import { useFonts} from '@expo-google-fonts/inter';
 import { AppLoading } from 'expo';
+//import * as MailComposer from 'expo-mail-composer';
+
+//mdiFacebook mdiInstagram 
+// mdiEmail mdiEmailOutline
+// mdiPhone mdiPhoneOutline mdiCellphoneAndroid mdiCardAccountPhone
+// mdiLaptopWindows 
 
 export default function ViewStand(){
-    const id =  1
+    const id = 1
     const [modalContactOpen, setModalContactOpen] = useState(false);
     const [modalHelpOpen, setModalHelpOpen] = useState(false);
 
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
+    const [product, setProduct] = useState([]);
     
     //let [fontsLoaded] = useFonts({
     //   'Red Hat Display Medium': require('../../../assets/fonts/RedHatDisplay-Medium.tff'),
     //});
     
     useEffect(() => {
-        const apiAsyncTest = async () => {
+        const apiAsyncStand = async () => {
             try {
                 const response = await api.get('mostrar_banca/' + id)  
                 //console.log(response);
@@ -35,8 +42,47 @@ export default function ViewStand(){
                 console.log(error);
             }
         }
-        apiAsyncTest();
+        apiAsyncStand();
+      
+  
+
+//        const apiAsyncProduct = async () => {
+//          try {
+//              const response = await api.get('mostrar_produto/' + id)  
+//              //console.log(response);
+//              .then((response) => response.product)
+//              .then((json) => setProduct(json))
+//              .catch((error) => console.error(error))
+//              .finally(() => setLoading(false));
+//          } catch (error) {
+//              console.log(error);
+//          }
+//        }
+//        apiAsyncProduct();
     }, []);
+
+    useEffect(() => {
+      const apiAsyncStand = async () => {
+          try {
+              const response = await api.get('mostrar_produto/' + id)  
+              //console.log(response);
+              .then((response) => response.data)
+              .then((json) => setProduct(json))
+              .catch((error) => console.error(error))
+              .finally(() => setLoading(false));
+          } catch (error) {
+              console.log(error);
+          }
+      }
+      apiAsyncStand();
+    }, []);
+
+  // function sendMail() {
+  // MailComposer.composeAsync({
+  // subject: `MeuChuchu: ${item.name}`,
+  //  recipients: [item.email],
+  // })
+  //}
 
     //if (!fontsLoaded) {
     //  return <AppLoading />;
@@ -118,9 +164,10 @@ export default function ViewStand(){
             {isLoading ? <ActivityIndicator/> : (
               <FlatList
                 data={data}
-                keyExtractor={(item) => item.id.toString()} 
+                keyExtractor={(item) => item.id.toString()}  
+                
                 renderItem={({ item }) => (
-                  <Text style={styles.Name}>{item.name}</Text>
+                <Text style={styles.Name}>{item.name} </Text>
                 )}
               />
             )}
@@ -136,7 +183,41 @@ export default function ViewStand(){
               />
             )}
           </View>        
-          
+          <View style={styles.ProductsPos}>
+            {isLoading ? <ActivityIndicator/> : (
+              <FlatList
+                vertical
+                showsVerticalScrollIndicator={true}
+                keyExtractor={(item) => item.id.toString()}
+                data={product}
+                //ItemSeparatorComponent={
+                //  () => <View style={{ width: metrics.baseMargin*10, height: metrics.baseMargin}}/>
+                //}
+                renderItem={({ item }) => (
+                  <View style={styles.Product}>
+                    <Image
+                      source={require('../../image/frutas_verduras.jpg')}
+                      style ={styles.ProductImage}
+                    />
+                    <View style={styles.ProductText}>
+                      <Text style={styles.ProductName}>
+                        {item.name}
+                      </Text>
+                      <Text style={styles.ProductPrice}>
+                        Preço: R${item.preco}
+                      </Text>
+                      <Text style={styles.ProductDes}>
+                        Descrição: {item.descricao}
+                      </Text>
+                    </View>
+                    
+                  </View>
+                  
+                )}
+              />
+            )}
+          </View>
+
           <View style={styles.ButtonPos} >
               <TouchableOpacity style = {styles.Button} onPress = {() => setModalContactOpen(true)}>
                 <Text style = {styles.ButtonText}>Contate o vendedor</Text>
