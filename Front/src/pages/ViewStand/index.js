@@ -107,13 +107,87 @@ export default function ViewStand(){
                     data={data}
                     keyExtractor={(item) => item.id.toString()} 
                     renderItem={({ item }) => (
-                    <Text style={styles.Contacts}> 
-                       Email: {item.email}{"\n"}{"\n"}{"\n"}
-                       Celular: {item.celular}{"\n"}{"\n"}{"\n"}
-                       Instagram: {item.instagram}{"\n"}{"\n"}{"\n"}
-                       Facebook: {item.facebook}{"\n"}{"\n"}{"\n"}
-                       Website: {item.website}{"\n"}
-                    </Text>
+                      <View style = {styles.ContactModal}>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "cellphone-basic" 
+                            size = {70}
+                            style= {{color: 'darkorange'}}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL(`tel:${item.celular}`)}>
+                            Celular: {item.celular}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "instagram" 
+                            size = {70}
+                            style= {{color: '#C13584'}}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://instagram.com/" + item.instagram)}>
+                            Instagram: {item.instagram}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "email-outline" 
+                            size = {70}
+                            style= {{color: 'red'}}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL(`mailto:${item.email}`)}>
+                            Email: {item.email}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "facebook" 
+                            size = {70}
+                            style= {{color: '#3b5998'}}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://facebook.com/" + item.facebook)}>
+                            Facebook: {item.facebook}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "laptop-windows" 
+                            size = {70}
+                            style= {{color: 'limegreen'}}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://" + item.website)}>
+                            Website: {item.website}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "sign-direction" 
+                            size = {70}
+                            style= {{color: 'pink'}}
+                          />
+                          <Text style={styles.Contacts}>
+                            Endereco: {item.endereco}
+                          </Text>
+                        </View>
+                        <View style = {styles.Contact}>
+                          <MaterialCommunityIcons
+                            name = "map-marker" 
+                            size = {70}
+                            style= {{color: '#fde910'}}
+                          />
+                          <Text style={styles.Contacts}>
+                            Região Administrativa: {item.regadm}
+                          </Text>
+                        </View>
+                      </View>
+                      
+                      
+                    //<Text style={styles.Contacts}> 
+                    //   Email: {item.email}
+                    //   Celular: {item.celular}
+                    //   Instagram: {item.instagram}
+                    //   Facebook: {item.facebook}
+                    //   Website: {item.website}{"\n"}
+                    //</Text>
                     )}
                   />
                 </View>

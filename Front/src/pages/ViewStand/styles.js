@@ -152,13 +152,34 @@ const styles = StyleSheet.create({
         marginTop: metrics.baseMargin * 19,
         marginLeft: metrics.baseMargin * 2,
         flex:1,
+        flex:1,
+        justifyContent: 'space-between',
         //justifyContent: 'space-between',
         //position: 'absolute',
+    },
+    Icon:{
+        color: colors.primaryGreen,
+    },
+    ContactModal:{
+       // flex: 1  
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
+    Contact:{
+        justifyContent: 'space-between',
+        marginBottom: metrics.baseMargin * 10,
     },
     Contacts:{
         fontSize: fonts.title/1.5,
         color: colors.black,
-        textAlign: 'left',
+        position: 'absolute',
+        alignSelf: 'flex-start',
+        marginTop: metrics.baseMargin * 5,
+        marginLeft: metrics.baseMargin * 15,
+        justifyContent: 'space-between',
+    },
+    Phone:{
+        color: colors.primaryGreen,
     },
     CloseButton:{
         alignSelf: 'flex-end',
