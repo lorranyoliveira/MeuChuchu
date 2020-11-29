@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // justifyContent: 'space-between',
         backgroundColor: colors.lightPink,
-        paddingTop: 90,
+        paddingTop: 30,
     },
     Container2:{
         flex : 1,
