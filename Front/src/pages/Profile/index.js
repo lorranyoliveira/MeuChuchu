@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, Text, Image} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Button from '../../components/Button';
 import { colors } from '../../styles';
 import styles from './styles';
-// import MateriaCommunityIcons from 'react-native-elements';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Profile = () => {
