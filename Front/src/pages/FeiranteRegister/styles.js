@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 50
+        paddingTop: 30
     },
     textos:{
-        fontSize: 20,
+        fontSize: 18,
     },
     MeuChuchu:{
         color : colors.primaryGreen,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         width: '100%',
-        paddingTop: 50,
+        paddingTop: 25,
     },
     
 });
