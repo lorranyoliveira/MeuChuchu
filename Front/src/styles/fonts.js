@@ -1,4 +1,8 @@
+//importações
+
 import metrics from './metrics'; 
+
+// declaração da fontes utilizadas na estilização
 
 const fonts = {
     base: metrics.screenWidth*0.06666,
