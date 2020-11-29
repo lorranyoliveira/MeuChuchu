@@ -23,7 +23,7 @@ export default function Header() {
                     color={colors.primaryGreen}
                 />
             </View>
-            <Text style={styles.headerText}>Meu Chuchu</Text>
+            <Text style={styles.headerText}>MeuChuchu</Text>
 
         </View>
     )

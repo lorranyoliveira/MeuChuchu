@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         flex : 1,
         alignItems: 'flex-start',
         width: '100%',
-        paddingTop: 70,
+        paddingTop: 30,
         paddingLeft: 20,
         paddingRight:20
     },
@@ -25,16 +25,12 @@ const styles = StyleSheet.create({
         paddingRight: 20
 
     },
-    MeuChuchu:{
-        color : colors.primaryGreen,
-        fontSize : 35,
-    },
     Login:{
-        fontSize: 28,
+        fontSize: 25,
         paddingLeft: 10
     },
     Password:{
-        fontSize: 28,
+        fontSize: 25,
         paddingLeft: 10,
         
     },
