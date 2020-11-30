@@ -7,9 +7,8 @@ import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HelpButton from '../../components/HelpButton';
 import api from '../../services/api'
-import { useFonts} from '@expo-google-fonts/inter';
 import { AppLoading } from 'expo';
-//import { AsyncStorage } from 'react-native';
+import ProductForm from '../ProductForm';
 
 //mdiFacebook mdiInstagram 
 // mdiEmail mdiEmailOutline
@@ -29,6 +28,8 @@ export default function ViewStand(){
 
     const [isLoadingProduct, setLoadingProduct] = useState(true);
     const [isLoadingStand, setLoadingStand] = useState(true);
+    const [isSubmitingProduct, setSubmitingProduct] = useState(false);
+
     const [data, setData] = useState([]);
     const [product, setProduct] = useState([]);
     
@@ -82,11 +83,17 @@ export default function ViewStand(){
     //}
     //const value = await AsyncStorage.getItem('user_id');
 
-    function handleshowButton(){
-      if(user_id == user_id){
-        setshowButton(true)
-      }
-    }
+    const addProduct = (product) => {
+      product.banca_id = id;
+      setProduct((currentProduct) => {
+        api.post('cadastrar_produto', 
+                  product)
+        return [product, ...currentProduct];
+      });
+//      setLoadingProduct(true);
+      setModalProductOpen(false);
+      setSubmitingProduct(false);
+    };
 
     return (
       <View style={styles.Container}>
@@ -103,6 +110,7 @@ export default function ViewStand(){
                 <Text style = {styles.ContactsTitle}>Contatos:</Text>
               </View>
               <View style = {styles.ContactsPos}>
+              {isLoadingStand ? <ActivityIndicator/> : (
                 <FlatList 
                   data={data}
                   keyExtractor={(item) => item.id.toString()} 
@@ -181,6 +189,7 @@ export default function ViewStand(){
                     </View>
                   )}
                 />
+              )}
               </View>
                 <View style={styles.ClosePos}>
                   <TouchableOpacity onPress = {() => setModalContactOpen(false)}>
@@ -210,7 +219,8 @@ export default function ViewStand(){
           <Modal visible ={modalProductOpen} animationType = 'slide'>
             <View style = {styles.modalContent}>
               <View style={styles.ButtonPos}>
-                <TouchableOpacity style = {styles.Button}  onPress = {() => setModalProductOpen(false)}>
+                <ProductForm addProduct = {addProduct}/>
+                <TouchableOpacity style = {styles.Button}  onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
                   <Text style = {styles.ButtonText}>Fechar modal</Text>
                 </TouchableOpacity>
               </View>
@@ -241,7 +251,7 @@ export default function ViewStand(){
             <View style={styles.PlusPos}>
               {compare() == 1?
                <TouchableOpacity>
-               <MaterialCommunityIcons onPress = {() => setModalProductOpen(true)}
+               <MaterialCommunityIcons onPress = {() => setSubmitingProduct(true), () => setModalProductOpen(true)}
                    name="plus-circle" 
                    size = {40} 
                    style={styles.PlusButton}
@@ -256,6 +266,7 @@ export default function ViewStand(){
             <FlatList
               data={data}
               keyExtractor={(item) => item.id.toString()}  
+              //Math.random().toString();
               
               renderItem={({ item }) => (
               <Text style={styles.Name}>{item.name} </Text>
@@ -275,11 +286,12 @@ export default function ViewStand(){
           )}
         </View>        
         <View style={styles.ProductsPos}>
-          {isLoadingProduct ? <ActivityIndicator/> : (
+          {isLoadingProduct || isSubmitingProduct ? <ActivityIndicator/> : (
             <FlatList
               vertical
               showsVerticalScrollIndicator={true}
-              keyExtractor={(item) => item.id.toString()}
+              keyExtractor={(item, index) => index.toString()}
+              //keyExtractor={({ name }, index) => name.toString()}
               data={product}
               //ItemSeparatorComponent={
               //  () => <View style={{ width: metrics.baseMargin*10, height: metrics.baseMargin}}/>
