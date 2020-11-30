@@ -17,14 +17,11 @@ import Header from '../../components/header';
 const ProfileOption = () => {
     return (
         <View style={styles.card}>
-<<<<<<< HEAD
             <Header>
 
             </Header>
 
-=======
             <HelpButton/>
->>>>>>> dea8b49ef1b03ae3769f8df32612a6f156c4dd4d
             <Text style={styles.text}>Escolha o tipo de perfil que deseja criar</Text>
             <View style={styles.cardButton}>
                 <Button
@@ -35,11 +32,8 @@ const ProfileOption = () => {
                 <Button
                     text="Comercial"
                     width={250}
-<<<<<<< HEAD
-                    backgroundColor="#FFF"
-=======
+
                     backgroundColor= {colors.primaryGreen}
->>>>>>> dea8b49ef1b03ae3769f8df32612a6f156c4dd4d
                 />
             </View>
         </View>
