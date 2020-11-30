@@ -7,6 +7,7 @@ import {
     TextInput,
 } from 'react-native';
 import CardSearch from '../../components/CardSearch';
+import HelpButton from '../../components/HelpButton';
 import api from '../../services/api';
 import styles from './styles';
 
@@ -20,7 +21,7 @@ const Search = () => {
     useEffect(() => {
         const apiAsyncTest = async () => {
 
-            const response = await api.get('mostrar_produtos')
+            const response = await api.get('/mostrar_bancas')
                 .then((response) => response.data)
                 .then((json) => {
                     setMasterDataSource(json)
@@ -50,20 +51,7 @@ const Search = () => {
                 });
             setFilteredDataSource(newData);
             setSearch(text);
-            //if para verificar se o texto não está em branco
-            //Fiz esse if porque o anterior só verifica o nome do produto e não a descrição 
-        if(text){
-                const Data = masterDataSource.filter(
-                    function (item) {
-                        const itemData = item.descricao
-                            ? item.descricao.toUpperCase()
-                            : ''.toUpperCase();
-                        const textData = text.toUpperCase();
-                        return itemData.indexOf(textData) > -1;
-                    });
-                setFilteredDataSource(Data);
-                setSearch(text);
-            }
+        
         } else {
             // Se o texto inserido está em branco
             // Atualize FilteredDataSource com masterDataSource
@@ -83,23 +71,27 @@ const Search = () => {
                         onChangeText={(text) => searchFilterFunction(text)}
                         value={search}
                         underlineColorAndroid="transparent"
-                        placeholder="Produto ou vendedor"
+                        placeholder="Vendedor"
                     />
                     
                     <FlatList
                     // Flatlist para rederizar a pesquisa
                         data={filteredDataSource}
                         showsVerticalScrollIndicator={false}
+                        
                         renderItem={({ item }) => (
                             <CardSearch
                                 name={item.name.toString()}
-                                descricao={item.descricao.toString()}
-                                preco={item.preco}
-                            //image={item.image.uri}
+                                category={item.category}
+                                image={item.image}
                             />
+                        
                         )}
                         keyExtractor={(_, i) => i.toString()}
+                        
+                        
                     />
+                    
                 </View>
             </SafeAreaView>
 

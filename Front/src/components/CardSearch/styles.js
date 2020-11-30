@@ -4,46 +4,35 @@ import { metrics, colors, fonts } from '../../styles';
 export default StyleSheet.create({
     container: {
         paddingTop: metrics.baseMargin * 4,
+        
     },
 
     cardTitle: {
 
 
-        left: metrics.baseMargin * 2.5,
+        left: metrics.baseMargin * 40,
         paddingTop: metrics.baseMargin * 0.8,
-        fontSize: fonts.base,
+        fontSize: fonts.title,
         height: metrics.baseMargin * 7,
         width: metrics.baseMargin * 63,
-        fontWeight: 'bold',
+        
 
     },
 
     cardText: {
 
-
-        left: metrics.baseMargin * 2.5,
+        left: metrics.baseMargin * 35,
         paddingTop: metrics.baseMargin * 3,
         paddingRight: metrics.baseMargin,
-        fontSize: fonts.base * 0.58,
+        fontSize: fonts.bar,
         textAlign: 'left',
-        fontWeight: 'bold',
         bottom: metrics.baseMargin * 2,
         height: metrics.baseMargin * 22,
         width: metrics.baseMargin * 38,
+        
 
     },
-    preco:{
-        left: metrics.baseMargin * 2,
-        paddingTop: metrics.baseMargin * 3,
-        paddingRight: metrics.baseMargin,
-        fontSize: fonts.base * 0.58,
-        textAlign: 'center',
-        fontWeight: 'bold',
-        paddingBottom: metrics.baseMargin * 2,
-        height: metrics.baseMargin * 50,
-        width: metrics.baseMargin * 25,
-
-    },
+    
 
 
     card: {
@@ -54,6 +43,10 @@ export default StyleSheet.create({
         borderRadius: metrics.baseRadius * 1.3,
 
     },
+    image:{
+        width: metrics.baseMargin * 10,
+        height: metrics.baseMargin * 10,
+    }
 
 
 });

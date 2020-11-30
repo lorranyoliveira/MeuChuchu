@@ -13,7 +13,7 @@ const AppStack = createStackNavigator();
 //import FeiranteRegister from './pages/FeiranteRegister';
 //import storeInformations from './pages/storeInformations';
 //import header from'./components/header';
-import Search from './pages/ Search';
+import Search from './pages/Search';
 export default function Routes(){
     return(
         <NavigationContainer>
