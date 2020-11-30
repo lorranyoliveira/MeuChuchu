@@ -7,7 +7,6 @@ import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HelpButton from '../../components/HelpButton';
 import api from '../../services/api'
-import { useFonts} from '@expo-google-fonts/inter';
 import { AppLoading } from 'expo';
 //import * as MailComposer from 'expo-mail-composer';
 
