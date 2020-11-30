@@ -15,8 +15,7 @@ import styles from './styles';
 const ProfileOption = () => {
     return (
         <View style={styles.card}>
-            <HelpButton/>
-            <Text style={styles.text}>Escolha o tipo de perfil que deseja criar</Text>
+            <Text style={styles.text}>Escolha o tipo de perfil que deseja acessar</Text>
             <View style={styles.cardButton}>
                 <Button
                     text="Pessoal"
