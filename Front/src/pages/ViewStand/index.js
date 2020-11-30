@@ -84,13 +84,17 @@ export default function ViewStand(){
     //const value = await AsyncStorage.getItem('user_id');
 
     const addProduct = (product) => {
-      product.banca_id = id;
-      setProduct((currentProduct) => {
-        api.post('cadastrar_produto', 
-                  product)
-        return [product, ...currentProduct];
-      });
-//      setLoadingProduct(true);
+      if (product.name != ''){
+        if(product.preco == ''){
+          product.preco = -1;
+        }
+        product.banca_id = id;
+        setProduct((currentProduct) => {
+          api.post('cadastrar_produto', 
+                    product)
+          return [product, ...currentProduct];
+        });
+      }
       setModalProductOpen(false);
       setSubmitingProduct(false);
     };
@@ -203,6 +207,7 @@ export default function ViewStand(){
             </View>  
           </Modal> 
         </View> 
+
         <View >
           <Modal visible ={modalHelpOpen} animationType = 'slide'>
             <View style = {styles.modalContent}>
@@ -215,20 +220,27 @@ export default function ViewStand(){
             </View>  
           </Modal> 
         </View> 
+
         <View >
           <Modal visible ={modalProductOpen} animationType = 'slide'>
             <View style = {styles.modalContent}>
+              <Text style = {styles.AddProductsTitle}>Adicionar produto</Text>  
               <View style={styles.ButtonPos}>
                 <ProductForm addProduct = {addProduct}/>
-                <TouchableOpacity style = {styles.Button}  onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
-                  <Text style = {styles.ButtonText}>Fechar modal</Text>
-                </TouchableOpacity>
+                <View style={styles.ClosePos2}>
+                  <TouchableOpacity onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
+                    <MaterialCommunityIcons
+                          name = "close-circle" 
+                          size = {50}
+                          style= {styles.CloseButton}
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
-                <Text>Adicionar produto:</Text>
-                
             </View>  
           </Modal> 
         </View>
+
         <View style={styles.Container2}>
             <View style = {styles.BackPos}>
                 <TouchableOpacity>
@@ -265,15 +277,14 @@ export default function ViewStand(){
           {isLoadingStand ? <ActivityIndicator/> : (
             <FlatList
               data={data}
-              keyExtractor={(item) => item.id.toString()}  
-              //Math.random().toString();
-              
+              keyExtractor={(item) => item.id.toString()}             
               renderItem={({ item }) => (
               <Text style={styles.Name}>{item.name} </Text>
               )}
             />
           )}
         </View>
+
         <View style={styles.CategoryPos}>
           {isLoadingStand ? <ActivityIndicator/> : (
             <FlatList
@@ -306,9 +317,15 @@ export default function ViewStand(){
                     <Text style={styles.ProductName}>
                       {item.name}
                     </Text>
-                    <Text style={styles.ProductPrice}>
-                      Preço: R${item.preco}
-                    </Text>
+                    {item.preco == -1 ? 
+                      < Text style={styles.ProductPrice}>
+                      Preço: --
+                      </Text>
+                      :
+                      < Text style={styles.ProductPrice}>
+                        Preço: R${item.preco}
+                      </Text>
+                    }
                     <Text style={styles.ProductDes}>
                       Descrição: {item.descricao}
                     </Text>

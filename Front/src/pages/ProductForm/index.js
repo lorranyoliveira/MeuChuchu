@@ -7,7 +7,7 @@ import api from '../../services/api'
 
 export default function ProductForm({addProduct}) {
     return (
-        <View>
+        <View styles = {styles.Container}>
             <Formik
                 initialValues = {{ name: '', descricao: '', preco: ''}}
                 onSubmit={(values, actions) => {
@@ -17,8 +17,9 @@ export default function ProductForm({addProduct}) {
                 }}
             >
                 {props => (
-                <View>
+                <View style = {styles.inputs}>
                     <TextInput
+                        style = {styles.input}
                         placeholder='Nome do produto'
                         onChangeText={props.handleChange('name')}
                         value={props.values.name}
@@ -26,6 +27,7 @@ export default function ProductForm({addProduct}) {
 
                     <TextInput
                         multiline
+                        style = {styles.input}
                         placeholder='Descrição'
                         onChangeText={props.handleChange('descricao')}
                         value={props.values.descricao}
@@ -33,12 +35,13 @@ export default function ProductForm({addProduct}) {
 
                     <TextInput 
                         placeholder='Preço'
+                        style = {styles.input}
                         onChangeText={props.handleChange('preco')}
                         value={props.values.preco}
                         keyboardType='numeric'
                     />
                 
-                    <Button color= 'green' title="Submit" onPress={props.handleSubmit} /> 
+                    <Button color= '#3E782B' title="Enviar" onPress={props.handleSubmit} /> 
                 </View>
                 )}
             </Formik>

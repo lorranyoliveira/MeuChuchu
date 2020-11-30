@@ -192,6 +192,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position : 'absolute'
     },
+    ClosePos2 :{
+        marginLeft: metrics.baseMargin * 73,
+        marginTop: metrics.baseMargin * -65,
+        //alignSelf: 'flex-end',
+        alignItems: 'center',
+        position : 'absolute'
+    },
     PlusButton:{
         alignSelf: 'flex-start',
         color: colors.primaryGreen,
@@ -206,6 +213,13 @@ const styles = StyleSheet.create({
         marginTop: metrics.baseMargin * 68,
         marginLeft: metrics.baseMargin * 15,
         //flex: 1,
+    },
+    AddProductsTitle:{
+        marginTop: metrics.baseMargin,
+        marginLeft: metrics.baseMargin,
+        fontSize: fonts.title,
+        color: colors.primaryGreen,
+        textAlign: 'left',
     },
     BackButton:{
         flexDirection: 'row',
