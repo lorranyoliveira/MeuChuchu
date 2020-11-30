@@ -193,12 +193,19 @@ const styles = StyleSheet.create({
         position : 'absolute'
     },
     PlusButton:{
-        alignSelf: 'flex-end',
+        alignSelf: 'flex-start',
         color: colors.primaryGreen,
+        //position: 'absolute',
+        marginLeft: metrics.baseMargin * -7,
+        marginTop: metrics.baseMargin * -1,
     },
     PlusPos:{
-        marginTop: metrics.baseMargin * 5,
-        marginEnd: metrics.baseMargin * 18,
+        alignSelf: 'flex-start',
+        //flexDirection: 'row',
+        position: 'absolute',
+        marginTop: metrics.baseMargin * 68,
+        marginLeft: metrics.baseMargin * 15,
+        //flex: 1,
     },
     BackButton:{
         flexDirection: 'row',
