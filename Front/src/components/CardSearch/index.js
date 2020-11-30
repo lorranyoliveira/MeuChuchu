@@ -12,10 +12,10 @@ const CardSearch = ({
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.card}>
         <Text style={styles.cardTitle}>{name}</Text>
+        
         <Text numberOfLines={8} style={styles.cardText}>{descricao}</Text>
-        <View>
-          <Text style={styles.preco}>R$:{preco}</Text>
-        </View>
+        <Text style={styles.preco}>R$:{preco}</Text>
+        
         <View style={{ paddingHorizontal: '5%' }} />
       </View>
     </TouchableOpacity>

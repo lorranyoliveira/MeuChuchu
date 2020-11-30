@@ -8,11 +8,12 @@ const AppStack = createStackNavigator();
 //import Main from'./pages/Main';
 //import ProfileOption from './pages/ProfileOption';
 //import Profile from './pages/Profile';
+//import Login from './pages/Login';
+//import ConsumerRegister from './pages/ConsumerRegister';
+//import FeiranteRegister from './pages/FeiranteRegister';
+//import storeInformations from './pages/storeInformations';
+//import header from'./components/header';
 import Search from './pages/ Search';
-
-
-//declaração das páginas de navegação
-
 export default function Routes(){
     return(
         <NavigationContainer>
