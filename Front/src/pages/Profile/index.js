@@ -1,22 +1,25 @@
 import React from 'react';
-import { View, Text, Image} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { View, Text, Image } from 'react-native';
 import Button from '../../components/Button';
 import { colors } from '../../styles';
 import styles from './styles';
-// import MateriaCommunityIcons from 'react-native-elements';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Header from '../../components/header';
+
 
 const Profile = () => {
     return (
         <View style={styles.Container}>
-           <View style={styles.Container2}>
+            <Header>
+
+            </Header>
+            <View style={styles.Container2}>
                 <MaterialCommunityIcons style={styles.Logout}
                     name="logout"
-                    size={24} 
+                    size={24}
                     color={colors.primaryGreen}
-                
-                 />
+
+                />
             </View>
             <View style={styles.Container3}>
                 <Image
