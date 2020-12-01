@@ -1,5 +1,13 @@
 import axios from "axios";
 
+<<<<<<< HEAD
+const api = axios.create({
+    baseURL: "http://192.168.0.108:5000",
+    //withCredentials: true,
+  });
+
+  export default api;
+=======
 // Pode ser algum servidor executando localmente: 
 // http://localhost:3000
 
@@ -36,3 +44,4 @@ const api = axios.create({
 //api.use(cors())
 
 export default api;
+>>>>>>> 49ce90af5b10253df61834bcece5b8709ca856ed
