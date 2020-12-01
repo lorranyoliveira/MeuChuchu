@@ -9,7 +9,7 @@ import HelpButton from '../../components/HelpButton';
 import api from '../../services/api'
 import { AppLoading } from 'expo';
 //import * as MailComposer from 'expo-mail-composer';
-
+// trash-can-outline
 //mdiFacebook mdiInstagram 
 // mdiEmail mdiEmailOutline
 // mdiPhone mdiPhoneOutline mdiCellphoneAndroid mdiCardAccountPhone
@@ -20,9 +20,11 @@ export default function ViewStand(){
     const [modalContactOpen, setModalContactOpen] = useState(false);
     const [modalHelpOpen, setModalHelpOpen] = useState(false);
 
-    const [isLoading, setLoading] = useState(true);
+    const [isLoadingStand, setLoadingStand] = useState(true);
+    const [isLoadingProduct, setLoadingProduct] = useState(true);
     const [data, setData] = useState([]);
     const [product, setProduct] = useState([]);
+
     
     //let [fontsLoaded] = useFonts({
     //   'Red Hat Display Medium': require('../../../assets/fonts/RedHatDisplay-Medium.tff'),
@@ -36,56 +38,55 @@ export default function ViewStand(){
                 .then((response) => response.data)
                 .then((json) => setData(json))
                 .catch((error) => console.error(error))
-                .finally(() => setLoading(false));
+                .finally(() => setLoadingStand(false));
             } catch (error) {
                 console.log(error);
             }
         }
         apiAsyncStand();
-      
-  
-
-//        const apiAsyncProduct = async () => {
-//          try {
-//              const response = await api.get('mostrar_produto/' + id)  
-//              //console.log(response);
-//              .then((response) => response.product)
-//              .then((json) => setProduct(json))
-//              .catch((error) => console.error(error))
-//              .finally(() => setLoading(false));
-//          } catch (error) {
-//              console.log(error);
-//          }
-//        }
-//        apiAsyncProduct();
     }, []);
 
     useEffect(() => {
-      const apiAsyncStand = async () => {
+      const apiAsyncProduct = async () => {
           try {
               const response = await api.get('mostrar_produto/' + id)  
               //console.log(response);
               .then((response) => response.data)
               .then((json) => setProduct(json))
               .catch((error) => console.error(error))
-              .finally(() => setLoading(false));
+              .finally(() => setLoadingProduct(false));
           } catch (error) {
               console.log(error);
           }
       }
-      apiAsyncStand();
+      apiAsyncProduct();
     }, []);
 
-  // function sendMail() {
-  // MailComposer.composeAsync({
-  // subject: `MeuChuchu: ${item.name}`,
-  //  recipients: [item.email],
-  // })
-  //}
+    //const useMountEffect = (apiAsyncProduct) => useEffect(apiAsyncProduct, [])
 
-    //if (!fontsLoaded) {
-    //  return <AppLoading />;
-    //} else {
+    const DeleteProduct = async (product_id) => {
+      response = await api.get('deletar_produto/' + product_id)
+      
+      setLoadingProduct(true)
+      response = await api.get('mostrar_produto/' + id)  
+        .then((response) => response.data)
+        .then((json) => setProduct(json))
+        .finally(() => setLoading(false));
+
+    };
+
+    const DeleteConfirm = (product_id) =>
+      Alert.alert(
+        "Excluir produto",
+        "Você quer mesmo excluir o produto?",
+        [
+          {
+            text: "Cancelar",
+          },
+          { text: "Excluir", onPress: () => DeleteProduct(product_id) }
+        ],
+      );
+
       return (
         <View style={styles.Container}>
           <View style = {styles.Container1}>
@@ -234,7 +235,7 @@ export default function ViewStand(){
               </View>
           </View>
           <View style={styles.NamePos}>
-            {isLoading ? <ActivityIndicator/> : (
+            {isLoadingStand ? <ActivityIndicator/> : (
               <FlatList
                 data={data}
                 keyExtractor={(item) => item.id.toString()}  
@@ -246,7 +247,7 @@ export default function ViewStand(){
             )}
           </View>
           <View style={styles.CategoryPos}>
-            {isLoading ? <ActivityIndicator/> : (
+            {isLoadingStand ? <ActivityIndicator/> : (
               <FlatList
                 data={data}
                 keyExtractor={(item) => item.id.toString()} 
@@ -257,7 +258,7 @@ export default function ViewStand(){
             )}
           </View>        
           <View style={styles.ProductsPos}>
-            {isLoading ? <ActivityIndicator/> : (
+            {isLoadingProducts ? <ActivityIndicator/> : (
               <FlatList
                 vertical
                 showsVerticalScrollIndicator={true}
@@ -283,7 +284,15 @@ export default function ViewStand(){
                         Descrição: {item.descricao}
                       </Text>
                     </View>
-                    
+                    <View >
+                      <TouchableOpacity onPress = {() => DeleteConfirm(item.id)}> 
+                        <MaterialCommunityIcons 
+                          name = "trash-can-outline" 
+                          size = {25}
+                          style= {{color: 'red', flexDirection: 'row-reverse', alignSelf: 'flex-end', justifyContent: 'space-between', padding: metrics.baseMargin}}
+                        />
+                      </TouchableOpacity>
+                    </View>
                   </View>
                   
                 )}
@@ -298,13 +307,16 @@ export default function ViewStand(){
           </View>
         </View>
       );
+}
+
+
+
     //}
 //    return (
 //<Button style = {styles.Button}
-              //  title="Contate o vendedor"
-              //  color = {colors.primaryGreen}
-              //  onPress={() => Alert.alert('Simple Button pressed')}
-             // />
+//  title="Contate o vendedor"
+//  color = {colors.primaryGreen}
+//  onPress={() => Alert.alert('Simple Button pressed')}
 //
 //    <View style={{ flex: 1, padding: 24 }}>
 //      {isLoading ? <ActivityIndicator/> : (
@@ -318,8 +330,6 @@ export default function ViewStand(){
 //      )}
 //    </View>
 //  );
-
-}
 //
 //    async function loadStand(){
 //
