@@ -20,7 +20,7 @@ const Login = () => {
     return (
         <View style={styles.Container}>
             <Header>
-
+                
             </Header>
             <View style={styles.Container2}>
                 <Text style={styles.Login}>Login:</Text>
@@ -39,7 +39,8 @@ const Login = () => {
                 />
                 <Button style={styles.boton}
                     title="Esqueceu a senha?"
-                    color="#000000"
+                    color={colors.lightPink}
+
                 />
                 <View style={styles.Container4}>
                     <Button2 style={styles.Botton}

@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     },
     Boton:{
         fontSize:20,
-        color : colors.black,
+        color: colors.lightPink,
+
     },
     Botton:{
         fontSize:20,

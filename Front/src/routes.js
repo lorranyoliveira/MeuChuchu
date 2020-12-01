@@ -20,10 +20,54 @@ const HomeStack = createStackNavigator();
 const HomeScreen = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name="Escolha de Perfil" component={ProfileOption} />
-    <HomeStack.Screen name="Search" component={Search}/>
-    <HomeStack.Screen name="Login" component={Login}/>
-    <HomeStack.Screen name="FeiranteRegister" component={FeiranteRegister}/>
-    <HomeStack.Screen name="storeInformations" component={storeInformations}/>
+    <HomeStack.Screen name="Search" component={Search}
+      options={{
+        title: 'Busca',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
+    <HomeStack.Screen name="Login" component={Login}
+      options={{
+        title: 'Login',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
+    <HomeStack.Screen name="FeiranteRegister" component={FeiranteRegister}
+      options={{
+        title: 'Cadastro feirante',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
+    <HomeStack.Screen name="storeInformations" component={storeInformations}
+      options={{
+        title: 'Cadastro Feirante',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
   </HomeStack.Navigator>
 )
 export default function Routes() {
