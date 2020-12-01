@@ -5,12 +5,16 @@ import { Input } from 'react-native-elements';
 import { Button } from 'react-native';
 import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
+import Header from '../../components/header';
+
 
 const Login = () => {
     const [text, setText] = React.useState('');
     return (
         <View style={styles.Container}>
-            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
+            <Header>
+
+            </Header>
             <View style={styles.Container2}>
                 <Text style={styles.Login}>Login:</Text>
                 <Input
@@ -41,7 +45,7 @@ const Login = () => {
                         width={200}
                         backgroundColor={colors.lightPink}
                     />
-                    
+
                 </View>
             </View>
         </View>

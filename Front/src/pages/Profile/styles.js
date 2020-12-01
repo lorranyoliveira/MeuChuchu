@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: colors.lightPink,
-        paddingTop: 60,
+        paddingTop: 30,
     },
     Name:{
         fontSize: fonts.title,

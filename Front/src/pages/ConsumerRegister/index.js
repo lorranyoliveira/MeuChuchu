@@ -4,14 +4,16 @@ import { Input } from 'react-native-elements';
 import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import Header from '../../components/header';
+// import { createStackNavigator } from 'react-navigation-stack';
 const ConsumerRegister = () => {
     const [text, setText] = React.useState('');
 
     return (
         <View style={styles.Container}>
-            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
+            <Header>
+
+            </Header>
             <View style={styles.Container2}>
                 <Text style={styles.textos}>Nome completo</Text>
                 <Input

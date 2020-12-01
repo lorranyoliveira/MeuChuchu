@@ -1,16 +1,19 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import { Input } from 'react-native-elements';
 import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
+import Header from '../../components/header';
 
 const FeiranteRegister = () => {
     const [text, setText] = React.useState('');
 
     return (
         <View style={styles.Container}>
-            <Text style={styles.MeuChuchu}>MeuChuchu</Text>
+            <Header>
+
+            </Header>
             <View style={styles.Container2}>
                 <Text style={styles.textos}>Nome proprietário</Text>
                 <Input

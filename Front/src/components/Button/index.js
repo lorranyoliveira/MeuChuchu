@@ -9,10 +9,10 @@ import styles from './styles';
 //declaração do componente botão
 
 const Button = ({
-  text, width, backgroundColor
+  text, width, backgroundColor, size
 }) => (
   <TouchableOpacity>
-    <View style={styles.button} width={width} backgroundColor={backgroundColor}>
+    <View style={styles.button} width={width} backgroundColor={backgroundColor} size={size}>
       <Text style={styles.buttonText}>{text}</Text>
     </View>
   </TouchableOpacity>

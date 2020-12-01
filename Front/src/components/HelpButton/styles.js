@@ -5,13 +5,10 @@ import { colors, fonts, metrics} from '../../styles';
 //declaração da estilização do botão
 
 const styles = StyleSheet.create({
-  button: {
+  Button: {
     color: colors.primaryGreen,
-    top: 11,
-    right: -180,
-    position : 'absolute'
-  }
-
+    alignSelf: 'flex-end',
+  },
 });
 
 export default styles;
