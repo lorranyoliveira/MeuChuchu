@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingTop: 30,
         backgroundColor: colors.lightGrey,
-
     },
     cardButton:{
         alignItems: 'center',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         fontSize: fonts.base,
         fontWeight: 'bold',
         color: colors.black,
-        paddingTop: metrics.baseMargin * 20,
+        paddingTop: metrics.baseMargin * 10,
 
     }
 

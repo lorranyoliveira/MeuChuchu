@@ -4,14 +4,11 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Button from '../../components/Button';
-import HelpButton from '../../components/HelpButton';
 import { colors } from '../../styles';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
-import Profile from '../Profile';
-import Search from '../Search';
+
 
 
 // declaração da estrutura da tela ProfileOption 
@@ -31,8 +28,9 @@ const ProfileOption = () => {
                 <Button
                     text="Comercial"
                     width={250}
+
                     backgroundColor= {colors.primaryGreen}
-                    onPress={()=>navigation.navigate('Profile')}
+                    onPress={()=>navigation.navigate('Login')}
                 />
             </View>
         </View>
