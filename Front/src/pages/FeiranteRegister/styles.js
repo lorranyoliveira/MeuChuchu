@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: colors.lightPink,
+        backgroundColor: colors.lightGrey,
         paddingTop: 30,
     },
     Input:{
