@@ -11,6 +11,7 @@ import { colors } from '../../styles';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import Profile from '../Profile';
+import Search from '../Search';
 
 
 // declaração da estrutura da tela ProfileOption 
@@ -25,14 +26,13 @@ const ProfileOption = () => {
                     text="Pessoal"
                     width={250}
                     backgroundColor= {colors.primaryGreen}
-                    onPress={()=>navigation.navigate('Profile')}
+                    onPress={()=>navigation.navigate('Search')}
                 />
                 <Button
                     text="Comercial"
                     width={250}
                     backgroundColor= {colors.primaryGreen}
-                    
-                    
+                    onPress={()=>navigation.navigate('Profile')}
                 />
             </View>
         </View>
