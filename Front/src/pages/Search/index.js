@@ -5,10 +5,11 @@ import {
     View,
     FlatList,
     TextInput,
+    Image
 } from 'react-native';
 import CardSearch from '../../components/CardSearch';
-import HelpButton from '../../components/HelpButton';
 import api from '../../services/api';
+
 import styles from './styles';
 
 
@@ -17,7 +18,7 @@ const Search = () => {
     const [filteredDataSource, setFilteredDataSource] = useState([]);
     const [masterDataSource, setMasterDataSource] = useState([]);
 
-//Caminho para o banco de dados
+    //Caminho para o banco de dados
     useEffect(() => {
         const apiAsyncTest = async () => {
 
@@ -49,57 +50,65 @@ const Search = () => {
                     const textData = text.toUpperCase();
                     return itemData.indexOf(textData) > -1;
                 });
-            setFilteredDataSource(newData);
-            setSearch(text);
-        
-        } else {
-            // Se o texto inserido está em branco
-            // Atualize FilteredDataSource com masterDataSource
-            setFilteredDataSource(masterDataSource);
-            setSearch(text);
-        }
+
+                setFilteredDataSource(newData);
+                setSearch(text);
+
+            } else {
+                // Se o texto inserido está em branco
+                // Atualize FilteredDataSource com masterDataSource
+                setFilteredDataSource(masterDataSource);
+                setSearch(text);
+            }
+        };
+
+
+        return (
+            <View style={styles.Container}>
+
+                <SafeAreaView>
+                    <View>
+                        <TextInput
+                            //TextImput para inserir a pesquisa
+                            style={styles.textInputStyle}
+                            onChangeText={(text) => searchFilterFunction(text)}
+                            value={search}
+                            underlineColorAndroid="transparent"
+                            placeholder="Vendedor"
+                        />
+
+                        <FlatList
+                            // Flatlist para rederizar a pesquisa
+                            data={filteredDataSource}
+                            showsVerticalScrollIndicator={false}
+                            numColumns={2}
+                            horizontal={false}
+
+
+                            renderItem={({ item }) => (
+
+                                <CardSearch
+                                    name={item.name.toString()}
+                                    category={item.category}
+                                    image={item.image}
+
+                                />
+
+
+                            )}
+
+                            keyExtractor={(_, i) => i.toString()}
+
+                        />
+
+                    </View>
+                </SafeAreaView>
+
+            </View>
+
+        );
     };
 
-    return (
-        <View style={styles.Container}>
 
-            <SafeAreaView>
-                <View>
-                    <TextInput
-                    //TextImput para inserir a pesquisa
-                        style={styles.textInputStyle}
-                        onChangeText={(text) => searchFilterFunction(text)}
-                        value={search}
-                        underlineColorAndroid="transparent"
-                        placeholder="Vendedor"
-                    />
-                    
-                    <FlatList
-                    // Flatlist para rederizar a pesquisa
-                        data={filteredDataSource}
-                        showsVerticalScrollIndicator={false}
-                        
-                        renderItem={({ item }) => (
-                            <CardSearch
-                                name={item.name.toString()}
-                                category={item.category}
-                                image={item.image}
-                            />
-                        
-                        )}
-                        keyExtractor={(_, i) => i.toString()}
-                        
-                        
-                    />
-                    
-                </View>
-            </SafeAreaView>
-
-        </View>
-
-    );
-};
-
-
-export default Search;
+    export default Search;
 

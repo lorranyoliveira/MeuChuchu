@@ -9,26 +9,31 @@ export default StyleSheet.create({
 
     cardTitle: {
 
-
-        left: metrics.baseMargin * 40,
-        paddingTop: metrics.baseMargin * 0.8,
-        fontSize: fonts.title,
-        height: metrics.baseMargin * 7,
-        width: metrics.baseMargin * 63,
+        left: metrics.baseMargin,
+        paddingTop: metrics.baseMargin * 17,
+        paddingRight: metrics.baseMargin,
+        fontSize: fonts.title - 13,
+        textAlign: 'left',
+        bottom: metrics.baseMargin * 2,
+        height: metrics.baseMargin * 22,
+        width: metrics.baseMargin * 38,
+        color: colors.black,
         
 
     },
 
     cardText: {
 
-        left: metrics.baseMargin * 35,
-        paddingTop: metrics.baseMargin * 3,
+        left: metrics.baseMargin,
+        paddingTop: metrics.baseMargin,
         paddingRight: metrics.baseMargin,
-        fontSize: fonts.bar,
+        fontSize: fonts.bar - 1,
         textAlign: 'left',
         bottom: metrics.baseMargin * 2,
         height: metrics.baseMargin * 22,
         width: metrics.baseMargin * 38,
+        color: colors.primaryGreen,
+        
         
 
     },
@@ -37,15 +42,20 @@ export default StyleSheet.create({
 
     card: {
 
-        backgroundColor: colors.white,
-        height: metrics.baseMargin * 20,
-        width: metrics.baseMargin * 60,
-        borderRadius: metrics.baseRadius * 1.3,
+    height: metrics.baseMargin * 28,
+    width: metrics.baseMargin * 28,
+    marginTop: metrics.baseMargin * 2,
+    marginHorizontal: metrics.baseMargin * 1.4,
+    backgroundColor: colors.white,
+    borderRadius: metrics.baseRadius * 1.3,
+    
 
     },
     image:{
-        width: metrics.baseMargin * 10,
-        height: metrics.baseMargin * 10,
+        position: 'absolute',
+        height: metrics.baseMargin * 15,
+        width: metrics.baseMargin * 28,
+        
     }
 
 

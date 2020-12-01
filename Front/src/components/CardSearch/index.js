@@ -11,22 +11,27 @@ const CardSearch = ({
 }) => (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>{name}</Text> 
-        <Text numberOfLines={8} style={styles.cardText}>{ category}</Text>
-        <Image
-        source = {require('../../image/download.jpeg')}
-        {...image()}
-        style={styles.image}
-        />
+      
+       <Image
+         source = {require('../../image/feira.jpg')}
+         style={styles.image}
+         {...image}/>
+         
+      <Text style={styles.cardTitle}>{name}</Text>
+      <Text  style={styles.cardText}>{category}</Text>
+        
         <View style={{ paddingHorizontal: '5%' }} />
       </View>
     </TouchableOpacity>
   );
+  CardSearch.defaultProps = {
+    image: '',
+  };
 CardSearch.propTypes = {
   name: PropTypes.string.isRequired,
   category: PropTypes.array.isRequired,
   onPress: PropTypes.func.isRequired,
-  //image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 //{image()}
