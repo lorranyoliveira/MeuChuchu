@@ -17,6 +17,8 @@ import { AppLoading } from 'expo';
 
 export default function ViewStand(){
     const id = 1
+    const user = false
+    const user_id = 1
     const [modalContactOpen, setModalContactOpen] = useState(false);
     const [modalHelpOpen, setModalHelpOpen] = useState(false);
 
@@ -65,14 +67,13 @@ export default function ViewStand(){
     //const useMountEffect = (apiAsyncProduct) => useEffect(apiAsyncProduct, [])
 
     const DeleteProduct = async (product_id) => {
-      response = await api.get('deletar_produto/' + product_id)
+      await api.get('deletar_produto/' + product_id)
       
       setLoadingProduct(true)
       response = await api.get('mostrar_produto/' + id)  
         .then((response) => response.data)
         .then((json) => setProduct(json))
-        .finally(() => setLoading(false));
-
+        .finally(() => setLoadingProduct(false));
     };
 
     const DeleteConfirm = (product_id) =>
@@ -86,6 +87,12 @@ export default function ViewStand(){
           { text: "Excluir", onPress: () => DeleteProduct(product_id) }
         ],
       );
+
+      function compare(){
+        if(user && user_id == data[0].user_id){
+          return 1;
+        }
+      }
 
       return (
         <View style={styles.Container}>
@@ -205,18 +212,6 @@ export default function ViewStand(){
             </Modal> 
           </View> 
 
-          <View >
-            <Modal visible ={modalHelpOpen} animationType = 'slide'>
-              <View style = {styles.modalContent}>
-                <View style={styles.ButtonPos}>
-                  <TouchableOpacity style = {styles.Button}  onPress = {() => setModalHelpOpen(false)}>
-                    <Text style = {styles.ButtonText}>Fechar modal</Text>
-                  </TouchableOpacity>
-                </View>
-                  <Text>Ajuda:</Text>
-              </View>  
-            </Modal> 
-          </View> 
 
           <View style={styles.Container2}>
               <View style = {styles.BackPos}>
@@ -227,11 +222,6 @@ export default function ViewStand(){
                           style= {styles.BackButton}
                       />
                   </TouchableOpacity>
-              </View>
-              <View style={styles.HelpButton} >
-                <TouchableOpacity onPress = {() => setModalHelpOpen(true)}>
-                  <HelpButton />
-                </TouchableOpacity>
               </View>
           </View>
           <View style={styles.NamePos}>
@@ -258,7 +248,7 @@ export default function ViewStand(){
             )}
           </View>        
           <View style={styles.ProductsPos}>
-            {isLoadingProducts ? <ActivityIndicator/> : (
+            {isLoadingProduct ? <ActivityIndicator/> : (
               <FlatList
                 vertical
                 showsVerticalScrollIndicator={true}
@@ -284,17 +274,20 @@ export default function ViewStand(){
                         Descrição: {item.descricao}
                       </Text>
                     </View>
-                    <View >
-                      <TouchableOpacity onPress = {() => DeleteConfirm(item.id)}> 
-                        <MaterialCommunityIcons 
-                          name = "trash-can-outline" 
-                          size = {25}
-                          style= {{color: 'red', flexDirection: 'row-reverse', alignSelf: 'flex-end', justifyContent: 'space-between', padding: metrics.baseMargin}}
-                        />
-                      </TouchableOpacity>
+                    {isLoadingStand? <ActivityIndicator/> : (
+                      <View >
+                        {compare() == 1? 
+                          <TouchableOpacity onPress = {() => DeleteConfirm(item.id)}> 
+                            <MaterialCommunityIcons 
+                              name = "trash-can-outline" 
+                              size = {25}
+                              style= {{color: 'red', flexDirection: 'row-reverse', alignSelf: 'flex-end', justifyContent: 'space-between', padding: metrics.baseMargin}}
+                            />
+                          </TouchableOpacity>
+                        : null}
                     </View>
+                    )}
                   </View>
-                  
                 )}
               />
             )}
