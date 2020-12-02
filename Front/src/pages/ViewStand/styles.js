@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: fonts.title/1.5,
         color: colors.primaryGreen,
         fontWeight: 'bold',
-        textAlign: 'left',
+        textAlign: 'left',    
     },
     ProductsPos:{
         flexDirection: 'row',
@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
         height: metrics.baseMargin * 25, 
         borderRadius: 15, 
         alignSelf: 'flex-start',
-
     }, 
     Photo:{
         marginTop: metrics.baseMargin,
@@ -161,13 +160,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position : 'absolute'
     },
+    ClosePos2 :{
+        marginLeft: metrics.baseMargin * 73,
+        marginTop: metrics.baseMargin * -65,
+        alignItems: 'center',
+        position : 'absolute'
+    },
     PlusButton:{
-        alignSelf: 'flex-end',
+        alignSelf: 'flex-start',
         color: colors.primaryGreen,
+        marginLeft: metrics.baseMargin * -7,
+        marginTop: metrics.baseMargin * -1,
     },
     PlusPos:{
-        marginTop: metrics.baseMargin * 5,
-        marginEnd: metrics.baseMargin * 18,
+        alignSelf: 'flex-start',
+        position: 'absolute',
+        marginTop: metrics.baseMargin * 68,
+        marginLeft: metrics.baseMargin * 15,
+    },
+    AddProductsTitle:{
+        marginTop: metrics.baseMargin,
+        marginLeft: metrics.baseMargin,
+        fontSize: fonts.title,
+        color: colors.primaryGreen,
+        textAlign: 'left',
     },
     BackButton:{
         flexDirection: 'row',
