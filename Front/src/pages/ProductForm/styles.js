@@ -1,5 +1,7 @@
+//este arquivo apresenta a estilização da tela ProductForm
+//declaração da estilização da tela ViewStand
 import {StyleSheet} from 'react-native';
-import {metrics,colors,fonts} from '../../styles';
+import {metrics,colors} from '../../styles';
 
 const styles = StyleSheet.create({
     Container : {

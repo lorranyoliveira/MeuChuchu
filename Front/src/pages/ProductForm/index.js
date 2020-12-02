@@ -1,10 +1,12 @@
-import React from 'react';
-import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
-import styles from './styles';
-import { colors, metrics } from '../../styles';
-import { Formik } from 'formik';
-import api from '../../services/api'
+//Esse arquivo apresenta a estrutura da tela de visualização dos dados das bancas
 
+//Imports
+import React from 'react';
+import { Button, TextInput, View } from 'react-native';
+import styles from './styles';
+import { Formik } from 'formik';
+
+//Declaração da estrutura da tela ProductForm
 export default function ProductForm({addProduct}) {
     return (
         <View styles = {styles.Container}>
