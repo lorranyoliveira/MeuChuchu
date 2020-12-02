@@ -12,6 +12,10 @@ import ConsumerRegister from './pages/ConsumerRegister';
 
 //declaração das páginas de navegação
 
+let id = 2 //id é o id da banca selecionada
+let user_id = 34 //user_id é o id do usuário que está logado
+let user = true
+
 export default function Routes(){
     return(
         <NavigationContainer>
