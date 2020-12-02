@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: fonts.title/1.5,
         color: colors.primaryGreen,
         fontWeight: 'bold',
-        textAlign: 'left',    
+        textAlign: 'left',
     },
     ProductsPos:{
         flexDirection: 'row',
@@ -94,7 +94,13 @@ const styles = StyleSheet.create({
         height: metrics.baseMargin * 35, 
         borderRadius: metrics.baseMargin * 17.5, 
         
-    }, 
+    },
+    Delete:{color: 'red', 
+        flexDirection: 'row-reverse', 
+        alignSelf: 'flex-end', 
+        justifyContent: 'space-between', 
+        padding: metrics.baseMargin
+    },
     Container2:{
         marginTop: metrics.baseMargin * 10,
         flexDirection: 'row',

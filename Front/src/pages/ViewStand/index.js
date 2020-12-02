@@ -2,10 +2,9 @@
 
 //Imports
 import  React, {useState, useEffect} from 'react';
-import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Modal, Linking} from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Alert, Modal, Linking} from 'react-native';
 import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import HelpButton from '../../components/HelpButton';
 import api from '../../services/api'
 import ProductForm from '../ProductForm';
 
@@ -16,7 +15,6 @@ export default function ViewStand(){
     const user = true
 
     const [modalContactOpen, setModalContactOpen] = useState(false);
-    const [modalHelpOpen, setModalHelpOpen] = useState(false);
     const [modalProductOpen, setModalProductOpen] = useState(false);
 
     const [isLoadingProduct, setLoadingProduct] = useState(true);
@@ -56,11 +54,27 @@ export default function ViewStand(){
       apiAsyncProduct();
     }, []);
 
-    function compare(){
-      if(user && user_id == data[0].user_id){
-        return 1;
-      }
-    }
+    const DeleteProduct = async (product_id) => {
+      await api.get('deletar_produto/' + product_id)
+      
+      setLoadingProduct(true)
+      const response = await api.get('mostrar_produto/' + id)  
+        .then((response) => response.data)
+        .then((json) => setProduct(json))
+        .finally(() => setLoadingProduct(false));
+    };
+
+    const DeleteConfirm = (product_id) =>
+      Alert.alert(
+        "Excluir produto",
+        "Você quer mesmo excluir o produto?",
+        [
+          {
+            text: "Cancelar",
+          },
+          { text: "Excluir", onPress: () => DeleteProduct(product_id) }
+        ],
+      );
 
     const addProduct = (product) => {
       if (product.name != ''){
@@ -78,6 +92,12 @@ export default function ViewStand(){
       setSubmitingProduct(false);
     };
 
+    function compare(){
+      if(user && user_id == data[0].user_id){
+        return 1;
+      }
+    }
+    
     return (
       <View style={styles.Container}>
         <View style = {styles.Container1}>
@@ -188,6 +208,26 @@ export default function ViewStand(){
           </Modal> 
         </View>
 
+        <View>
+          <Modal visible ={modalProductOpen} animationType = 'slide'>
+            <View style = {styles.modalContent}>
+              <Text style = {styles.AddProductsTitle}>Adicionar produto</Text>  
+              <View style={styles.ButtonPos}>
+                <ProductForm addProduct = {addProduct}/>
+                <View style={styles.ClosePos2}>
+                  <TouchableOpacity onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
+                    <MaterialCommunityIcons
+                          name = "close-circle" 
+                          size = {50}
+                          style= {styles.CloseButton}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>  
+          </Modal> 
+        </View>
+
         <View style={styles.Container2}>
             <View style = {styles.BackPos}>
                 <TouchableOpacity>
@@ -244,7 +284,7 @@ export default function ViewStand(){
               <Text style = {styles.ButtonText}>Contate o vendedor</Text>
             </TouchableOpacity>
         </View>
-        
+
         <View style={styles.ProductsPos}>
           {isLoadingProduct || isSubmitingProduct ? <ActivityIndicator/> : (
             <FlatList
@@ -275,31 +315,24 @@ export default function ViewStand(){
                       Descrição: {item.descricao}
                     </Text>
                   </View>
+                  {isLoadingStand? <ActivityIndicator/> : (
+                      <View >
+                        {compare() == 1? 
+                          <TouchableOpacity onPress = {() => DeleteConfirm(item.id)}> 
+                            <MaterialCommunityIcons 
+                              name = "trash-can-outline" 
+                              size = {25}
+                              style= {styles.Delete}
+                            />
+                          </TouchableOpacity>
+                        : null}
+                    </View>
+                    )}
                 </View>
               )}
             />
           )}
         </View>
-
-        <View>
-          <Modal visible ={modalProductOpen} animationType = 'slide'>
-            <View style = {styles.modalContent}>
-              <Text style = {styles.AddProductsTitle}>Adicionar produto</Text>  
-              <View style={styles.ButtonPos}>
-                <ProductForm addProduct = {addProduct}/>
-                <View style={styles.ClosePos2}>
-                  <TouchableOpacity onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
-                    <MaterialCommunityIcons
-                          name = "close-circle" 
-                          size = {50}
-                          style= {styles.CloseButton}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>  
-          </Modal> 
-        </View>  
-      </View>
-    );
+      </View>    
+  );
 }
