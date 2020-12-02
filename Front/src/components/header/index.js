@@ -15,23 +15,7 @@ export default function Header() {
     }
     return (
         <View style={styles.header}>
-            <View style={styles.help}>
-                <MaterialCommunityIcons
-                    name="help"
-                    size={24}
-                    color={colors.primaryGreen}
-                    onPress={ajuda}
-                />
-            </View>
-            <View style={styles.teste}>
-                <AntDesign
-                    name="arrowleft"
-                    size={24}
-                    color={colors.primaryGreen}
-                    onPress={voltar}
 
-                />
-            </View>
             <Text style={styles.headerText}>MeuChuchu</Text>
 
         </View>
