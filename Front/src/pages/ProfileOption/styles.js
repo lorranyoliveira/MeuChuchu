@@ -12,13 +12,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-<<<<<<< HEAD
         paddingTop: 30,
         
       
-=======
-        backgroundColor: colors.lightGrey,
->>>>>>> dea8b49ef1b03ae3769f8df32612a6f156c4dd4d
 
     },
     cardButton:{
