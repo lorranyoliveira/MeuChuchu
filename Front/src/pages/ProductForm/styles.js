@@ -4,30 +4,38 @@ import {StyleSheet} from 'react-native';
 import {metrics,colors} from '../../styles';
 
 const styles = StyleSheet.create({
-    Container : {
+    Container:{
         flex: 1,
         alignItems: 'center',
-        alignSelf: 'center',
-        justifyContent: 'space-evenly',
-        backgroundColor: colors.lightPink,
-        paddingTop: 60,
-        position: 'relative',
-    },
-    inputs: {
-        flex: 2,
-        alignSelf: 'center',
         justifyContent: 'space-between',
-        position: 'relative',
-        marginTop: metrics.baseMargin * -50,
-        marginLeft: metrics.baseMargin * 25,
+        backgroundColor: colors.lightPink,
+        paddingTop: 30,
     },
-    input: {
-        borderWidth: 1,
-        borderColor: '#ddd',
-        padding: 10,
+    Input:{
+        paddingTop:10,
+        alignItems: 'center',
+        
+    },
+    Container2:{
+        flex: 1,
+        alignItems: 'flex-start',
+        width: '100%',
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 30
+    },
+    textos:{
         fontSize: 18,
-        borderRadius: 6,
-        marginBottom: metrics.baseMargin * 3,
+    },
+    MeuChuchu:{
+        color : colors.primaryGreen,
+        fontSize : 35,
+    },
+    Container3:{
+        flex: 1,
+        alignItems: 'center',
+        width: '100%',
+        paddingTop: 25,
     },
 });
 
