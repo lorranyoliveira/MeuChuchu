@@ -1,5 +1,9 @@
+//este arquivo apresenta a estilização da tela ViewStand
+
 import {StyleSheet} from 'react-native';
 import {metrics,colors,fonts} from '../../styles';
+
+//declaração da estilização da tela ViewStand
 
 const styles = StyleSheet.create({
     Container:{
@@ -11,7 +15,6 @@ const styles = StyleSheet.create({
     },
     Container1:{
         marginTop: metrics.baseMargin * 5,
-        //flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
         position: 'absolute',
@@ -26,8 +29,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: metrics.baseMargin * 47,
         marginLeft: metrics.baseMargin * 5,
-        //flex: 1, 
-        //padding: 24,
         position: 'absolute'
     },
     Category:{
@@ -52,7 +53,6 @@ const styles = StyleSheet.create({
     },
     ButtonPos:{
         flexDirection: 'row',
-        //alignItems: 'center',
         marginTop: metrics.baseMargin * 66,
         marginBottom: metrics.baseMargin * 67,
         position: 'absolute'
@@ -60,20 +60,11 @@ const styles = StyleSheet.create({
     ButtonText: {
         textAlign: 'center',
         fontSize: fonts.base/1.5,
-        //fontWeight: 'bold',
         color: colors.white,
     },
     ProductText:{
-        //fontSize: fonts.title/1.5,
-        //color: colors.black,
-        //width: '50%',
-        //textAlign: 'left',
-        //flex: 1,
         padding: metrics.baseMargin * 11,
-        //alignItems: 'center',
         alignSelf: 'flex-start',
-        //justifyContent: 'space-between',
-        //position: 'absolute',
         marginLeft: metrics.baseMargin * 16,
         marginTop: metrics.baseMargin * -35
     },
@@ -81,39 +72,22 @@ const styles = StyleSheet.create({
         fontSize: fonts.title/1.5,
         color: colors.primaryGreen,
         fontWeight: 'bold',
-        //width: '50%',
         textAlign: 'left',
-        //flex: 1,
-        //padding: 30,
-        //alignItems: 'center',
-        //alignSelf: 'flex-start',
-        //justifyContent: 'space-between',
-        //position: 'absolute',
-        //marginLeft: metrics.baseMargin * 20,
-        //marginTop: metrics.baseMargin * -31
     },
     ProductsPos:{
         flexDirection: 'row',
-        //alignItems: 'center',
         justifyContent: 'space-between',
         marginTop: metrics.baseMargin * 68,
-        //alignSelf: 'center',
     },
     Product:{
         marginLeft: metrics.baseMargin * 2,
-        //marginBottom: metrics.baseMargin * 5,
-        
-        //borderRadius: metrics.baseMargin * 17.5, 
     }, 
     ProductImage:{
         marginRight: metrics.baseMargin,
-        //marginTop: metrics.baseMargin * 13,
         width: metrics.baseMargin * 25, 
         height: metrics.baseMargin * 25, 
         borderRadius: 15, 
         alignSelf: 'flex-start',
-        
-        //borderRadius: metrics.baseMargin * 17.5, 
     }, 
     Photo:{
         marginTop: metrics.baseMargin,
@@ -121,7 +95,13 @@ const styles = StyleSheet.create({
         height: metrics.baseMargin * 35, 
         borderRadius: metrics.baseMargin * 17.5, 
         
-    }, 
+    },
+    Delete:{color: 'red', 
+        flexDirection: 'row-reverse', 
+        alignSelf: 'flex-end', 
+        justifyContent: 'space-between', 
+        padding: metrics.baseMargin
+    },
     Container2:{
         marginTop: metrics.baseMargin * 10,
         flexDirection: 'row',
@@ -133,10 +113,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     ModalContacts:{
-        //marginTop: metrics.baseMargin * 5,
         flex:1,
         justifyContent: 'space-between',
-        //position: 'absolute',
     },
     PosContactsTitle:{
         position: 'absolute',
@@ -154,14 +132,11 @@ const styles = StyleSheet.create({
         flex:1,
         flex:1,
         justifyContent: 'space-between',
-        //justifyContent: 'space-between',
-        //position: 'absolute',
     },
     Icon:{
         color: colors.primaryGreen,
     },
     ContactModal:{
-       // flex: 1  
         flexDirection: 'column',
         justifyContent: 'space-between',
     },
@@ -216,7 +191,6 @@ const styles = StyleSheet.create({
         position : 'absolute'
     },
     Photo:{
-        //flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         margin: metrics.baseMargin * 0,
