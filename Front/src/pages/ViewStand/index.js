@@ -1,8 +1,8 @@
 //Esse arquivo apresenta a estrutura da tela de visualização dos dados e produtos das bancas
 
 //Imports
-import  React, {useState, useEffect} from 'react';
-import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Alert, Modal, Linking} from 'react-native';
+import React, { useState, useEffect, Component } from 'react';
+import { ActivityIndicator, FlatList, Text, View, Image, TouchableOpacity, Alert, Modal, Linking } from 'react-native';
 import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api'
@@ -12,258 +12,270 @@ import ProductForm from '../ProductForm';
 
 ///////////DESCOMENTAR A PRÓXIMA LINHA//////////////
 // export default function ViewStand(id, user_id, user){ 
-export default function ViewStand(){ ///////////APAGAR ESSA LINHA/////////////
-    
-  ////////////APAGAR AS PRÓXIMAS LINHAS//////////////////
-    const id = 1 //id é o id da banca selecionada
-    const user_id = 1 //user_id é o id do usuário que está logado
-    const user = true //user é um booleano indicando se há alguém logado ou não
-    /////////////////////////////////////////////////////
+ let id = 2 //id é o id da banca selecionada
+  let user_id = 34 //user_id é o id do usuário que está logado
+  let user = true
 
-    const [modalContactOpen, setModalContactOpen] = useState(false);
-    const [modalProductOpen, setModalProductOpen] = useState(false);
 
-    const [isLoadingProduct, setLoadingProduct] = useState(true);
-    const [isLoadingStand, setLoadingStand] = useState(true);
-    const [isSubmitingProduct, setSubmitingProduct] = useState(false);
+class ViewStand extends Component {  
+  constructor(props) {
+    super(props)
+    this.state = {
+      modalContactOpen: false,
+      modalProductOpen: '',
+      isLoadingProduct: '',
+      isLoadingStand: '',
+      isSubmitingProduct: '',
+      product: '',
+      data: ''
+    }
 
-    const [data, setData] = useState([]);
-    const [product, setProduct] = useState([]);
-    
-    useEffect(() => {
-        const apiAsyncStand = async () => {
-            try {
-                const response = await api.get('mostrar_banca/' + id)  
-                .then((response) => response.data)
-                .then((json) => setData(json))
-                .catch((error) => console.error(error))
-                .finally(() => setLoadingStand(false));
-            } catch (error) {
-                console.log(error);
-            }
+    let id = 2 //id é o id da banca selecionada
+    let user_id = 34 //user_id é o id do usuário que está logado
+    let user = true
+  }
+
+  componentDidMount = async () => {
+      const apiAsyncStand = async () => {
+        try {
+          const response = await api.get('mostrar_banca/' + id)
+            .then((response) => response.data)
+            .then((json) => this.handleChange(json, 'data'))
+            .catch((error) => console.error(error))
+            .finally(() => this.handleChange(false, 'isLoadingStand'));
+        } catch (error) {
+          console.log(error);
         }
-        apiAsyncStand();
-    }, []);
-
-    useEffect(() => {
+      }
+      apiAsyncStand();
+  
       const apiAsyncProduct = async () => {
-          try {
-              const response = await api.get('mostrar_produto/' + id)  
-              .then((response) => response.data)
-              .then((json) => setProduct(json))
-              .catch((error) => console.error(error))
-              .finally(() => setLoadingProduct(false));
-          } catch (error) {
-              console.log(error);
-          }
+        try {
+          const response = await api.get('mostrar_produto/' + id)
+            .then((response) => response.data)
+            .then((json) => this.handleChange(json, 'product'))
+            .catch((error) => console.error(error))
+            .finally(() => this.handleChange(false, 'loadingProduct'));
+        } catch (error) {
+          console.log(error);
+        }
       }
       apiAsyncProduct();
-    }, []);
+  }
 
-    const DeleteProduct = async (product_id) => {
-      await api.get('deletar_produto/' + product_id)
-      
-      setLoadingProduct(true)
-      const response = await api.get('mostrar_produto/' + id)  
-        .then((response) => response.data)
-        .then((json) => setProduct(json))
-        .finally(() => setLoadingProduct(false));
-    };
+  DeleteProduct = async (product_id) => {
+    await api.get('deletar_produto/' + product_id)
 
-    const DeleteConfirm = (product_id) =>
-      Alert.alert(
-        "Excluir produto",
-        "Você quer mesmo excluir o produto?",
-        [
-          {
-            text: "Cancelar",
-          },
-          { text: "Excluir", onPress: () => DeleteProduct(product_id) }
-        ],
-      );
+    this.handleChange(true, 'loadingProduct')
+    const response = await api.get('mostrar_produto/' + id)
+      .then((response) => response.data)
+      .then((json) => this.handleChange(json, 'product'))
+      .finally(() => this.handleChange(false, 'loadingProduct'));
+  };
 
-    const addProduct = (product) => {
-      if (product.name != ''){
-        if(product.preco == ''){
-          product.preco = -1;
-        }
-        product.banca_id = id;
-        setProduct((currentProduct) => {
-          api.post('cadastrar_produto', 
-                    product)
-          return [product, ...currentProduct];
-        });
+  DeleteConfirm = (product_id) =>
+    Alert.alert(
+      "Excluir produto",
+      "Você quer mesmo excluir o produto?",
+      [
+        {
+          text: "Cancelar",
+        },
+        { text: "Excluir", onPress: () => DeleteProduct(product_id) }
+      ],
+    );
+
+  addProduct = (product) => {
+    if (product.name != '') {
+      if (product.preco == '') {
+        product.preco = -1;
       }
-      setModalProductOpen(false);
-      setSubmitingProduct(false);
-    };
-
-    function compare(){
-      if(user && user_id == data[0].user_id){
-        return 1;
-      }
+      product.banca_id = id;
+      this.handleChange(currentProduct => {
+        api.post('cadastrar_produto',
+          product)
+        return [product, ...currentProduct];
+      }, 'product');
     }
-    
+    this.handleChange(false, 'ProductOpen');
+    this.handleChange(false, 'submitingProduct');
+  };
+
+  compare = (user) => {
+    if (user && user_id == data[0].user_id) {
+      return 1;
+    }
+  }
+
+  handleChange = (event, name) => {
+    const value = event.target ? event.target.value : event;
+    this.setState({ [name]: value });
+  };
+
+  render() {
+    const {
+      modalContactOpen, modalProductOpen, isLoadingProduct, isLoadingStand, isSubmitingProduct, product, data 
+    } = this.state 
     return (
       <View style={styles.Container}>
-        <View style = {styles.Container1}>
+        <View style={styles.Container1}>
           <Image
-              style={styles.Photo}
-              source={require('../../image/feira.png')}
+            style={styles.Photo}
+            source={require('../../image/feira.png')}
           />
         </View>
 
         <View >
-          <Modal visible ={modalContactOpen} animationType = 'slide'>
-            <View style = {styles.ModalContacts}>
-              <View style = {styles.PosContactsTitle}>
-                <Text style = {styles.ContactsTitle}>Contatos:</Text>
+          <Modal visible={modalContactOpen} animationType='slide'>
+            <View style={styles.ModalContacts}>
+              <View style={styles.PosContactsTitle}>
+                <Text style={styles.ContactsTitle}>Contatos:</Text>
               </View>
-              <View style = {styles.ContactsPos}>
-              {isLoadingStand ? <ActivityIndicator/> : (
-                <FlatList 
-                  data={data}
-                  keyExtractor={(item) => item.id.toString()} 
-                  renderItem={({ item }) => (
-                    <View style = {styles.ContactModal}>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "cellphone-basic" 
-                          size = {70}
-                          style= {{color: 'darkorange'}}
-                        />
-                        <Text style={styles.Contacts} onPress={() => Linking.openURL(`tel:${item.celular}`)}>
-                          Celular: {item.celular}
-                        </Text>
+              <View style={styles.ContactsPos}>
+                {isLoadingStand ? <ActivityIndicator /> : (
+                  <FlatList
+                    data={data}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                      <View style={styles.ContactModal}>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="cellphone-basic"
+                            size={70}
+                            style={{ color: 'darkorange' }}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL(`tel:${item.celular}`)}>
+                            Celular: {item.celular}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="instagram"
+                            size={70}
+                            style={{ color: '#C13584' }}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://instagram.com/" + item.instagram)}>
+                            Instagram: {item.instagram}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="email-outline"
+                            size={70}
+                            style={{ color: 'red' }}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL(`mailto:${item.email}`)}>
+                            Email: {item.email}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="facebook"
+                            size={70}
+                            style={{ color: '#3b5998' }}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://facebook.com/" + item.facebook)}>
+                            Facebook: {item.facebook}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="laptop-windows"
+                            size={70}
+                            style={{ color: 'limegreen' }}
+                          />
+                          <Text style={styles.Contacts} onPress={() => Linking.openURL("https://" + item.website)}>
+                            Website: {item.website}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="sign-direction"
+                            size={70}
+                            style={{ color: 'pink' }}
+                          />
+                          <Text style={styles.Contacts}>
+                            Endereço: {item.endereco}
+                          </Text>
+                        </View>
+                        <View style={styles.Contact}>
+                          <MaterialCommunityIcons
+                            name="map-marker"
+                            size={70}
+                            style={{ color: '#fde910' }}
+                          />
+                          <Text style={styles.Contacts}>
+                            Região Administrativa: {item.regadm}
+                          </Text>
+                        </View>
                       </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "instagram" 
-                          size = {70}
-                          style= {{color: '#C13584'}}
-                        />
-                        <Text style={styles.Contacts} onPress={() => Linking.openURL("https://instagram.com/" + item.instagram)}>
-                          Instagram: {item.instagram}
-                        </Text>
-                      </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "email-outline" 
-                          size = {70}
-                          style= {{color: 'red'}}
-                        />
-                        <Text style={styles.Contacts} onPress={() => Linking.openURL(`mailto:${item.email}`)}>
-                          Email: {item.email}
-                        </Text>
-                      </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "facebook" 
-                          size = {70}
-                          style= {{color: '#3b5998'}}
-                        />
-                        <Text style={styles.Contacts} onPress={() => Linking.openURL("https://facebook.com/" + item.facebook)}>
-                          Facebook: {item.facebook}
-                        </Text>
-                      </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "laptop-windows" 
-                          size = {70}
-                          style= {{color: 'limegreen'}}
-                        />
-                        <Text style={styles.Contacts} onPress={() => Linking.openURL("https://" + item.website)}>
-                          Website: {item.website}
-                        </Text>
-                      </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "sign-direction" 
-                          size = {70}
-                          style= {{color: 'pink'}}
-                        />
-                        <Text style={styles.Contacts}>
-                          Endereço: {item.endereco}
-                        </Text>
-                      </View>
-                      <View style = {styles.Contact}>
-                        <MaterialCommunityIcons
-                          name = "map-marker" 
-                          size = {70}
-                          style= {{color: '#fde910'}}
-                        />
-                        <Text style={styles.Contacts}>
-                          Região Administrativa: {item.regadm}
-                        </Text>
-                      </View>
-                    </View>
-                  )}
-                />
-              )}
+                    )}
+                  />
+                )}
               </View>
-                <View style={styles.ClosePos}>
-                  <TouchableOpacity onPress = {() => setModalContactOpen(false)}>
-                    <MaterialCommunityIcons
-                          name = "close-circle" 
-                          size = {50}
-                          style= {styles.CloseButton}
-                    />
-                  </TouchableOpacity>
-                </View>
-            </View>  
-          </Modal> 
+              <View style={styles.ClosePos}>
+                <TouchableOpacity onPress={(e) => this.handleChange(e, 'ModalContactOpen')}>
+                  <MaterialCommunityIcons
+                    name="close-circle"
+                    size={50}
+                    style={styles.CloseButton}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
         </View>
 
         <View>
-          <Modal visible ={modalProductOpen} animationType = 'slide'>
-            <View style = {styles.modalContent}>
-              <Text style = {styles.AddProductsTitle}>Adicionar produto</Text>  
+          <Modal visible={modalProductOpen} animationType='slide'>
+            <View style={styles.modalContent}>
+              <Text style={styles.AddProductsTitle}>Adicionar produto</Text>
               <View style={styles.ButtonPos}>
-                <ProductForm addProduct = {addProduct}/>
+                <ProductForm addProduct={this.addProduct} />
                 <View style={styles.ClosePos2}>
-                  <TouchableOpacity onPress = {() => setSubmitingProduct(false), () => setModalProductOpen(false)}>
+                  <TouchableOpacity onPress={() => this.handleChange(false, 'submiting'), (e) => this.handleChange(e, 'ProductOpen')}>
                     <MaterialCommunityIcons
-                          name = "close-circle" 
-                          size = {50}
-                          style= {styles.CloseButton}
+                      name="close-circle"
+                      size={50}
+                      style={styles.CloseButton}
                     />
                   </TouchableOpacity>
                 </View>
               </View>
-            </View>  
-          </Modal> 
+            </View>
+          </Modal>
         </View>
 
         <View style={styles.Container2}>
-            <View style = {styles.BackPos}>
-                <TouchableOpacity>
-                    <MaterialCommunityIcons
-                        name = "chevron-left" 
-                        size = {70}
-                        style= {styles.BackButton}
-                    />
-                </TouchableOpacity>
-            </View>
+          <View style={styles.BackPos}>
+            <TouchableOpacity>
+              <MaterialCommunityIcons
+                name="chevron-left"
+                size={70}
+                style={styles.BackButton}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.NamePos}>
-          {isLoadingStand ? <ActivityIndicator/> : (
+          {isLoadingStand ? <ActivityIndicator /> : (
             <FlatList
               data={data}
-              keyExtractor={(item) => item.id.toString()}  
-              
+              keyExtractor={(item) => item.id.toString()}
+
               renderItem={({ item }) => (
-              <Text style={styles.Name}>{item.name} </Text>
+                <Text style={styles.Name}>{item.name} </Text>
               )}
             />
           )}
         </View>
 
         <View style={styles.CategoryPos}>
-          {isLoadingStand ? <ActivityIndicator/> : (
+          {isLoadingStand ? <ActivityIndicator /> : (
             <FlatList
               data={data}
-              keyExtractor={(item) => item.id.toString()} 
+              keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
                 <Text style={styles.Category}>{item.category.toString().replace(',', ', ')}</Text>
               )}
@@ -271,28 +283,28 @@ export default function ViewStand(){ ///////////APAGAR ESSA LINHA/////////////
           )}
         </View>
 
-        {isLoadingStand ? <ActivityIndicator/> : (
+        {isLoadingStand ? <ActivityIndicator /> : (
           <View style={styles.PlusPos}>
-            {compare() == 1?
-             <TouchableOpacity>
-             <MaterialCommunityIcons onPress = {() => setSubmitingProduct(true), () => setModalProductOpen(true)}
-                 name="plus-circle" 
-                 size = {40} 
-                 style={styles.PlusButton}
-             />
-            </TouchableOpacity>
-            : null }
+            {this.compare() == 1 ?
+              <TouchableOpacity>
+                <MaterialCommunityIcons onPress={() =>  this.handleChange(true, 'submitingProduct'), (e) => this.handleChange(e, 'ProductOpen')}
+                  name="plus-circle"
+                  size={40}
+                  style={styles.PlusButton}
+                />
+              </TouchableOpacity>
+              : null}
           </View>
         )}
 
         <View style={styles.ButtonPos} >
-            <TouchableOpacity style = {styles.Button} onPress = {() => setModalContactOpen(true)}>
-              <Text style = {styles.ButtonText}>Contate o vendedor</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.Button} onPress={(e) => this.handleChange(e, 'ModalContactOpen')}>
+            <Text style={styles.ButtonText}>Contate o vendedor</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.ProductsPos}>
-          {isLoadingProduct || isSubmitingProduct ? <ActivityIndicator/> : (
+          {isLoadingProduct || isSubmitingProduct ? <ActivityIndicator /> : (
             <FlatList
               vertical
               showsVerticalScrollIndicator={true}
@@ -302,15 +314,15 @@ export default function ViewStand(){ ///////////APAGAR ESSA LINHA/////////////
                 <View style={styles.Product}>
                   <Image
                     source={require('../../image/frutas_verduras.jpg')}
-                    style ={styles.ProductImage}
+                    style={styles.ProductImage}
                   />
                   <View style={styles.ProductText}>
                     <Text style={styles.ProductName}>
                       {item.name}
                     </Text>
-                    {item.preco == -1 ? 
+                    {item.preco == -1 ?
                       < Text style={styles.ProductPrice}>
-                      Preço: --
+                        Preço: --
                       </Text>
                       :
                       < Text style={styles.ProductPrice}>
@@ -321,24 +333,28 @@ export default function ViewStand(){ ///////////APAGAR ESSA LINHA/////////////
                       Descrição: {item.descricao}
                     </Text>
                   </View>
-                  {isLoadingStand? <ActivityIndicator/> : (
-                      <View >
-                        {compare() == 1? 
-                          <TouchableOpacity onPress = {() => DeleteConfirm(item.id)}> 
-                            <MaterialCommunityIcons 
-                              name = "trash-can-outline" 
-                              size = {25}
-                              style= {styles.Delete}
-                            />
-                          </TouchableOpacity>
+                  {isLoadingStand ? <ActivityIndicator /> : (
+                    <View >
+                      {this.compare() == 1 ?
+                        <TouchableOpacity onPress={() => this.DeleteConfirm(item.id)}>
+                          <MaterialCommunityIcons
+                            name="trash-can-outline"
+                            size={25}
+                            style={styles.Delete}
+                          />
+                        </TouchableOpacity>
                         : null}
                     </View>
-                    )}
+                  )}
                 </View>
               )}
             />
           )}
         </View>
-      </View>    
-  );
+      </View>
+    );
+  }
+
 }
+
+export default ViewStand;
