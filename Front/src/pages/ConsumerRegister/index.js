@@ -8,6 +8,7 @@ import Header from '../../components/header';
 import * as ImagePicker from 'expo-image-picker';
 import Button from '../../components/Button';
 import api from '../../services/api';
+import LZString from 'lz-string';
 
 
 // import { createStackNavigator } from 'react-navigation-stack';
@@ -28,30 +29,28 @@ class ConsumerRegister extends Component {
 		const image = await ImagePicker.launchImageLibraryAsync({
 			allowsEditing: true,
 			base64: true,
-			quality: 0.1,
+			quality: 0.4,
 			aspect: [4, 3],
 		});
 
 		if (!image.cancelled) {
 			this.setState({
-        image: image,
-      });
+				image: image,
+			});
 		}
 	}
 
 	saveInfo = async () => {
-		console.log("ta dentro")
 		const payload = {
 			"name": this.state.name,
-			"cellphone": this.state.cellphone,
+			"celular": this.state.cellphone,
 			"email": this.state.email,
 			"password": this.state.password,
-			"image": this.state.image
+			"image": this.state.image['base64'],
+			"tipo_de_user": false
 		}
-		console.log(payload)
-		// const res = await api.post('/create-user', payload).then((res) => {
-		// 	console.log(res)
-		// })
+		const res = await api.post('/create-user', payload).then((res) => {
+		})
 	}
 
 	handleChange = (event, name) => {
