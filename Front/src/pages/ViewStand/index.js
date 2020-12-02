@@ -9,10 +9,16 @@ import api from '../../services/api'
 import ProductForm from '../ProductForm';
 
 //Declaração da estrutura da tela ViewStand
-export default function ViewStand(){
-    const id = 1
-    const user_id = 1
-    const user = true
+
+///////////DESCOMENTAR A PRÓXIMA LINHA//////////////
+// export default function ViewStand(id, user_id, user){ 
+export default function ViewStand(){ ///////////APAGAR ESSA LINHA/////////////
+    
+  ////////////APAGAR AS PRÓXIMAS LINHAS//////////////////
+    const id = 1 //id é o id da banca selecionada
+    const user_id = 1 //user_id é o id do usuário que está logado
+    const user = true //user é um booleano indicando se há alguém logado ou não
+    /////////////////////////////////////////////////////
 
     const [modalContactOpen, setModalContactOpen] = useState(false);
     const [modalProductOpen, setModalProductOpen] = useState(false);
