@@ -1,5 +1,11 @@
+//este arquivo apresenta a estilização do componente botão
+
+//importações
+
 import {  StyleSheet } from 'react-native';
 import { metrics, colors, fonts } from '../../styles';
+
+//declaração da estilização do CardSearch
 
 export default StyleSheet.create({
     container: {

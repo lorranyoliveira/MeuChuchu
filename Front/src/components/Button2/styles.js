@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     margin: metrics.baseMargin,
     justifyContent: 'space-between',
     alignSelf: 'center',
-    // marginTop: metrics.baseMargin * 10,
 
   },
 

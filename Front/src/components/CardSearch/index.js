@@ -1,10 +1,15 @@
+// este arquivo apresenta a estrutura do componente botão modelo 2
+
+//importações
+
 import React from 'react';
 import {
   View, Text, TouchableOpacity,Image
 } from 'react-native';
 import PropTypes from 'prop-types';
-
 import styles from './styles';
+
+//declaração do componente CardSearch
 
 const CardSearch = ({
   name,  category, onPress, image,

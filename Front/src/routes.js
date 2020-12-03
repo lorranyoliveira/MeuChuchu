@@ -14,9 +14,10 @@ import FeiranteRegister from './pages/FeiranteRegister';
 import storeInformations from './pages/storeInformations';
 import Search from './pages/Search';
 import Login from './pages/Login';
+import ViewStand from './pages/ViewStand';
+import Profile from './pages/Profile';
 
 
-<<<<<<< HEAD
 const HomeStack = createStackNavigator();
 const HomeScreen = () => (
   <HomeStack.Navigator>
@@ -69,30 +70,82 @@ const HomeScreen = () => (
           </TouchableOpacity>
         ),
       }} />
+      <HomeStack.Screen name="ViewStand" component={ViewStand}
+      options={{
+        title: 'Minha Banca',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
   </HomeStack.Navigator>
 )
+
+const ProfileStack = createStackNavigator();
+const ProfileScreen = () => (
+  <ProfileStack.Screen name="Profile" component={Profile} />
+
+)
+const SearchStack = createStackNavigator();
+const SearchScreen = () => (
+  <SearchStack.Screen name="Profile" component={Profile} />
+
+)
+const AppStack = createMaterialBottomTabNavigator();
+
+
 export default function Routes() {
+  //const isLoged = await AsyncStorage.getItem(login)
+  const isLoged = true
+  if (isLoged) {
+    return (
+      <NavigationContainer>
+        <AppStack.Navigator
+          headerMode="none"
+          activeColor={colors.selected}
+          inactiveColor={colors.gray}
+          barStyle={{ backgroundColor: colors.btnBlue }}
+          shifting={false}
+        >
+          <AppStack.Screen
+            name="Busca"
+            component={SearchScreen}
+            options={{
+              tabBarIcon: () => (
+                <AntDesign style={styles.Logout}
+                    name="search1"
+                    size={24}
+                    color={colors.primaryGreen}
+
+                />
+              ),
+            }}
+          />
+          <AppStack.Screen
+            name="Perfil"
+            component={ProfileScreen}
+            options={{
+              tabBarIcon: () => (
+                <AntDesign style={styles.Logout}
+                    name="user"
+                    size={24}
+                    color={colors.primaryGreen}
+
+                />
+              ),
+            }}
+          />
+        </AppStack.Navigator>
+      </NavigationContainer>
+    );
+  }
   return (
     <NavigationContainer>
       <HomeScreen />
     </NavigationContainer>
   );
 }
-=======
-//declaração das páginas de navegação
-
-let id = 2 //id é o id da banca selecionada
-let user_id = 34 //user_id é o id do usuário que está logado
-let user = true
-
-export default function Routes(){
-    return(
-        <NavigationContainer>
-            <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="ViewStand" component={ViewStand}/>
-            </AppStack.Navigator>
-        </NavigationContainer>
-
-    );
-}
->>>>>>> 13cec9e8212ab8755271d4a4c963e94f6815fe94

@@ -18,11 +18,8 @@
     "axios": "^0.19.2",
     "expo": "^39.0.5",
     "expo-status-bar": "~1.0.2",
-<<<<<<< HEAD
-    "prop-types": "^15.7.2",
-=======
     "formik": "^2.2.5",
->>>>>>> 13cec9e8212ab8755271d4a4c963e94f6815fe94
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",

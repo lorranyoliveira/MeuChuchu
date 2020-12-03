@@ -1,5 +1,8 @@
+// este arquivo apresenta a estrutura do componente botão ajuda
+
+//importações
 import { StyleSheet} from 'react-native';
-import { colors, fonts, metrics} from '../../styles';
+import { colors } from '../../styles';
 
 
 //declaração da estilização do botão

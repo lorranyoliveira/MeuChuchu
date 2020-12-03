@@ -8,20 +8,29 @@ import { colors } from '../../styles';
 import Header from '../../components/header';
 import api from '../../services/api';
 import { AsyncStorage } from '@react-native-community/async-storage';
-
-
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
     
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
-    
+    const navigation = useNavigation();
 
     async function routeLogin () {
         const data = { email, password};
         const response = await api.post('/login', data)
         .then( async (response) => {
-			console.log(response.data)
+            console.log(response.data)
+            const status = response.status
+            if( status == 200) {
+                await AsyncStorage.setItem(
+                    login, true
+                  );
+            } else {
+                await AsyncStorage.setItem(
+                    login, false
+                  );
+            }
 			try {
 				await AsyncStorage.setItem(
 				  user_id, response.data['user_id']
@@ -72,6 +81,7 @@ const Login = () => {
                         text="Criar cadastro"
                         width={200}
                         backgroundColor={colors.lightPink}
+                        onPress={()=>navigation.navigate('FeiranteRegister')}
                     />
 
                 </View>
