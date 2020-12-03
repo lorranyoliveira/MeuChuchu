@@ -10,7 +10,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 const user_id = 1
 
-class FeiranteRegister extends Component {
+class RegistrationChange extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -52,7 +52,7 @@ class FeiranteRegister extends Component {
 			"tipo_de_user": true
 		}
 		console.log(payload)
-		const res = await api.post('/create-user', payload).then((res) => {
+		const res = await api.post('/modificar_user', payload).then((res) => {
 			console.log(res.data)
 		})
 	}
@@ -100,8 +100,6 @@ class FeiranteRegister extends Component {
 			</View>
 		);
 	}
-
-
 }
 
-export default FeiranteRegister;
+export default RegistrationChange;

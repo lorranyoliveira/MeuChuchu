@@ -12,11 +12,21 @@
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/picker": "1.6.6",
     "@react-navigation/native": "^5.8.4",
+<<<<<<< HEAD
     "@react-navigation/stack": "^5.12.1",
     "axios": "^0.19.2",
+=======
+    "@react-navigation/stack": "^5.12.8",
+    "axios": "^0.21.0",
+>>>>>>> b29503f4b3a50362469727a3c93788e95cb5a12d
     "expo": "^39.0.5",
+    "expo-image-picker": "~9.1.1",
     "expo-status-bar": "~1.0.2",
+<<<<<<< HEAD
     "prop-types": "^15.7.2",
+=======
+    "formik": "^2.2.5",
+>>>>>>> b29503f4b3a50362469727a3c93788e95cb5a12d
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",

@@ -1,36 +1,35 @@
-import { StyleSheet } from 'react-native';
+//este arquivo apresenta a estilização da tela ProductForm
+//declaração da estilização da tela ViewStand
+import {StyleSheet} from 'react-native';
 import { metrics, colors, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
-    Container: {
+    Container:{
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: colors.lightPink,
         paddingTop: 30,
     },
-    Input: {
-        paddingTop: 10,
+    Input:{
+        paddingTop:10,
         alignItems: 'center',
-
+        
     },
-    Container2: {
+    Container2:{
         flex: 1,
         alignItems: 'flex-start',
         width: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        marginTop: metrics.baseMargin * 10,
-        borderRadius: metrics.baseRadius,
-        padding: metrics.baseMargin,
-        margin: metrics.baseMargin,
+        paddingTop: 30
     },
-    textos: {
-        fontSize: 20,
+    textos:{
+        fontSize: 18,
     },
-    MeuChuchu: {
-        color: colors.primaryGreen,
-        fontSize: 35,
+    MeuChuchu:{
+        color : colors.primaryGreen,
+        fontSize : 35,
     },
     Container3: {
         flex: 2,
@@ -40,10 +39,6 @@ const styles = StyleSheet.create({
         borderRadius: metrics.baseRadius,
         padding: metrics.baseMargin,
         margin: metrics.baseMargin,
-    },
-    pickerComponente: {
-        height: 80,
-        width: 350,
     },
     button: {
         borderRadius: metrics.baseRadius,
