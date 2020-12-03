@@ -11,7 +11,7 @@ import Header from '../../components/header';
 
 
 const storeInformations = () => {
-    const [text, setText, selectedValue, setSelectedValue] = useState("Acougue");
+    const [text, setText, selectedValue, setSelectedValue] = useState("Açougue");
 
     return (
         <View style={styles.Container}>
@@ -19,12 +19,12 @@ const storeInformations = () => {
 
             </Header>
             <View style={styles.Container2}>
-                <Text style={styles.textos}>Nome da loja</Text>
+                <Text style={styles.textos}>Nome da banca</Text>
                 <Input
                     style={styles.Input}
                     onChangeText={name => setText(name)}
                 />
-                <Text style={styles.textos}>Endereço da loja</Text>
+                <Text style={styles.textos}>Endereço da banca</Text>
                 <Input
                     style={styles.Input}
                     onChangeText={address => setText(address)}
@@ -37,13 +37,13 @@ const storeInformations = () => {
                 >
 
                     <Picker.Item label="Selecione uma categoria" value=" " />
-                    <Picker.Item label="Acougue" value="Acougue" />
-                    <Picker.Item label="Bebidas" value="Bebidas" />
-                    <Picker.Item label="Cereais/Grão" value="Cereais/Grão" />
+                    <Picker.Item label="Açougue" value="Açougue" />
+                    <Picker.Item label="Hortifruti" value="Hortifruti" />
+                    <Picker.Item label="Lanches e refeições" value="Lanches e refeições" />
                     <Picker.Item label="Doces" value="Doces" />
-                    <Picker.Item label="Frutas/Verduras" value="Frutas/Verduras" />
-                    <Picker.Item label="Massas" value="Massas" />
-                    <Picker.Item label="Tempero" value="Tempero" />
+                    <Picker.Item label="Peixaria" value="Peixaria" />
+                    <Picker.Item label="Produtos Regionais" value="Produtos Regionais" />
+                    <Picker.Item label="Outros" value="Outros" />
 
                 </Picker>
                 <View style={styles.Container3}>
