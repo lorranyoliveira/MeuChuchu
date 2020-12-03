@@ -24,10 +24,12 @@ const styles = StyleSheet.create({
         width: metrics.baseMargin * 60,
         borderRadius: metrics.baseRadius * 1.3,
         paddingLeft:metrics.baseMargin * 5,
-       
+       left: metrics.baseMargin,
         
        
     },
+    
+
 
 });
 

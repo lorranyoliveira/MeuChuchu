@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
-import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
-import { colors } from '../../styles';
+//import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
+//import { colors } from '../../styles';
 
 
 
