@@ -75,7 +75,7 @@ const Login = () => {
                         text="Entrar"
                         width={200}
                         backgroundColor={colors.primaryGreen}
-                        onPress={routeLogin}
+                        onPress={routeLogin, ()=>navigation.navigate('AppStack')}
                     />
                     <Button2 style={styles.Botton}
                         text="Criar cadastro"

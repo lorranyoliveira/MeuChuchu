@@ -17,6 +17,46 @@ import Login from './pages/Login';
 import ViewStand from './pages/ViewStand';
 import Profile from './pages/Profile';
 
+function AppStack() {
+const Tab = createMaterialBottomTabNavigator();
+  return (
+    <Tab.Navigator
+      headerMode="none"
+      activeColor={colors.selected}
+      inactiveColor={colors.gray}
+      barStyle={{ backgroundColor: colors.primaryGreen }}
+      shifting={false}
+    >
+      <Tab.Screen
+        name="Busca"
+        component={Search}
+        options={{
+          tabBarIcon: () => (
+            <AntDesign
+              name="search1"
+              size={24}
+              color={colors.white}
+
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={Profile}
+        options={{
+          tabBarIcon: () => (
+            <AntDesign
+              name="user"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
 
 const HomeStack = createStackNavigator();
 const HomeScreen = () => (
@@ -70,7 +110,7 @@ const HomeScreen = () => (
           </TouchableOpacity>
         ),
       }} />
-      <HomeStack.Screen name="ViewStand" component={ViewStand}
+    <HomeStack.Screen name="ViewStand" component={ViewStand}
       options={{
         title: 'Minha Banca',
         headerRight: () => (
@@ -82,66 +122,10 @@ const HomeScreen = () => (
           </TouchableOpacity>
         ),
       }} />
+    <HomeStack.Screen name="AppStack" component={AppStack} />
   </HomeStack.Navigator>
 )
-
-const ProfileStack = createStackNavigator();
-const ProfileScreen = () => (
-  <ProfileStack.Screen name="Profile" component={Profile} />
-
-)
-const SearchStack = createStackNavigator();
-const SearchScreen = () => (
-  <SearchStack.Screen name="Search" component={Search} />
-
-)
-const AppStack = createMaterialBottomTabNavigator();
-
-
 export default function Routes() {
-  //const isLoged = await AsyncStorage.getItem(login)
-  const isLoged = true
-  if (isLoged) {
-    return (
-      <NavigationContainer>
-        <AppStack.Navigator
-          headerMode="none"
-          activeColor={colors.selected}
-          inactiveColor={colors.gray}
-          barStyle={{ backgroundColor: colors.primaryGreen }}
-          shifting={false}
-        >
-          <AppStack.Screen
-            name="Busca"
-            component={Search}
-            options={{
-              tabBarIcon: () => (
-                <AntDesign 
-                    name="search1"
-                    size={24}
-                    color={colors.white}
-
-                />
-              ),
-            }}
-          />
-          <AppStack.Screen
-            name="Perfil"
-            component={Profile}
-            options={{
-              tabBarIcon: () => (
-                <AntDesign 
-                    name="user"
-                    size={24}
-                    color={colors.white}
-                />
-              ),
-            }}
-          />
-        </AppStack.Navigator>
-      </NavigationContainer>
-    );
-  }
   return (
     <NavigationContainer>
       <HomeScreen />
