@@ -92,7 +92,7 @@ const ProfileScreen = () => (
 )
 const SearchStack = createStackNavigator();
 const SearchScreen = () => (
-  <SearchStack.Screen name="Profile" component={Profile} />
+  <SearchStack.Screen name="Search" component={Search} />
 
 )
 const AppStack = createMaterialBottomTabNavigator();
@@ -108,18 +108,18 @@ export default function Routes() {
           headerMode="none"
           activeColor={colors.selected}
           inactiveColor={colors.gray}
-          barStyle={{ backgroundColor: colors.btnBlue }}
+          barStyle={{ backgroundColor: colors.primaryGreen }}
           shifting={false}
         >
           <AppStack.Screen
             name="Busca"
-            component={SearchScreen}
+            component={Search}
             options={{
               tabBarIcon: () => (
-                <AntDesign style={styles.Logout}
+                <AntDesign 
                     name="search1"
                     size={24}
-                    color={colors.primaryGreen}
+                    color={colors.white}
 
                 />
               ),
@@ -127,14 +127,13 @@ export default function Routes() {
           />
           <AppStack.Screen
             name="Perfil"
-            component={ProfileScreen}
+            component={Profile}
             options={{
               tabBarIcon: () => (
-                <AntDesign style={styles.Logout}
+                <AntDesign 
                     name="user"
                     size={24}
-                    color={colors.primaryGreen}
-
+                    color={colors.white}
                 />
               ),
             }}
