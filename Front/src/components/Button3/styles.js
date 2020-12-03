@@ -1,5 +1,11 @@
+//este arquivo apresenta a estilização do componente botão
+
+//importações
+
 import { StyleSheet} from 'react-native';
 import { colors, fonts, metrics} from '../../styles';
+
+//declaração da estilização do botão
 
 const styles = StyleSheet.create({
   button: {
