@@ -1,5 +1,11 @@
+//este arquivo apresenta a estilização do componente header
+
+// importações
+
 import {StyleSheet} from 'react-native';
 import {colors} from '../../styles';
+
+//estilizando o header
 
 const styles = StyleSheet.create({
     header:{
@@ -13,19 +19,6 @@ const styles = StyleSheet.create({
         letterSpacing: 1
 
     },
-    help:{
-        alignItems: 'flex-end',
-        width: '100%',
-        paddingRight: 20 ,
-        justifyContent: 'space-between'
-    },
-    teste:{
-        alignItems: 'flex-start',
-        width: '100%',
-        paddingLeft: 20,  
-
-    }
-
 });
 
 export default styles;
