@@ -15,28 +15,6 @@ import storeInformations from './pages/storeInformations';
 import Search from './pages/Search';
 import Login from './pages/Login';
 
-<<<<<<< HEAD
-const AppStack = createStackNavigator();
-//import Main from'./pages/Main';
-//import ProfileOption from './pages/ProfileOption';
-//import Profile from './pages/Profile';
-//import Login from './pages/Login';
-//import ConsumerRegister from './pages/ConsumerRegister';
-//import FeiranteRegister from './pages/FeiranteRegister';
-//import storeInformations from './pages/storeInformations';
-//import header from'./components/header';
-import Search from './pages/Search';
-export default function Routes(){
-    return(
-        <NavigationContainer>
-            <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="Search" component={Search}/>
-            </AppStack.Navigator>
-        </NavigationContainer>
-
-    );
-}
-=======
 
 const HomeStack = createStackNavigator();
 const HomeScreen = () => (
@@ -99,4 +77,3 @@ export default function Routes() {
     </NavigationContainer>
   );
 }
->>>>>>> 09f7cae3f5c79aa46cab34bac6f03b02996f3012

@@ -13,13 +13,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingTop: 30,
-<<<<<<< HEAD
         
       
 
-=======
-        backgroundColor: colors.lightGrey,
->>>>>>> 09f7cae3f5c79aa46cab34bac6f03b02996f3012
     },
     cardButton:{
         alignItems: 'center',
