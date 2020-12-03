@@ -1,31 +1,37 @@
 import React from 'react';
 import {
-  View, Text, TouchableOpacity,
+  View, Text, TouchableOpacity,Image
 } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
 
 const CardSearch = ({
-  name, descricao, onPress, image, preco
+  name,  category, onPress, image,
 }) => (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>{name}</Text>
-        
-        <Text numberOfLines={8} style={styles.cardText}>{descricao}</Text>
-        <Text style={styles.preco}>R$:{preco}</Text>
+      
+       <Image
+         source = {require('../../image/feira.jpg')}
+         style={styles.image}
+         {...image}/>
+         
+      <Text style={styles.cardTitle}>{name}</Text>
+      <Text  style={styles.cardText}>{category}</Text>
         
         <View style={{ paddingHorizontal: '5%' }} />
       </View>
     </TouchableOpacity>
   );
+  CardSearch.defaultProps = {
+    image: '',
+  };
 CardSearch.propTypes = {
   name: PropTypes.string.isRequired,
-  descricao: PropTypes.string.isRequired,
+  category: PropTypes.array.isRequired,
   onPress: PropTypes.func.isRequired,
-  preco: PropTypes.number.isRequired,
-  //image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 //{image()}
