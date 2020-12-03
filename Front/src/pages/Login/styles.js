@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         // justifyContent: 'space-between',
-        backgroundColor: colors.lightPink,
+        backgroundColor: colors.lightGrey,
         paddingTop: 30,
     },
     Container2:{
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     },
     Boton:{
         fontSize:20,
-        color : colors.black,
+        color: colors.lightPink,
+
     },
     Botton:{
         fontSize:20,

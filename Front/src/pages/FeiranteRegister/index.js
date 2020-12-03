@@ -5,9 +5,11 @@ import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
 import Header from '../../components/header';
+import { useNavigation } from '@react-navigation/native';
 
 const FeiranteRegister = () => {
     const [text, setText] = React.useState('');
+    const navigation = useNavigation();
 
     return (
         <View style={styles.Container}>
@@ -42,6 +44,7 @@ const FeiranteRegister = () => {
                         text="Próximo"
                         width={200}
                         backgroundColor={colors.primaryGreen}
+                        onPress={()=>navigation.navigate('storeInformations')}
                     />
                 </View>
             </View>
