@@ -10,56 +10,59 @@ import { metrics, colors, fonts } from '../../styles';
 export default StyleSheet.create({
     container: {
         paddingTop: metrics.baseMargin * 4,
+        
     },
 
     cardTitle: {
 
-
-        left: metrics.baseMargin * 2.5,
-        paddingTop: metrics.baseMargin * 0.8,
-        fontSize: fonts.base,
-        height: metrics.baseMargin * 7,
-        width: metrics.baseMargin * 63,
-        fontWeight: 'bold',
+        left: metrics.baseMargin,
+        paddingTop: metrics.baseMargin * 17,
+        paddingRight: metrics.baseMargin,
+        fontSize: fonts.title - 13,
+        textAlign: 'left',
+        bottom: metrics.baseMargin * 2,
+        height: metrics.baseMargin * 22,
+        width: metrics.baseMargin * 38,
+        color: colors.black,
+        
 
     },
 
     cardText: {
 
-
-        left: metrics.baseMargin * 2.5,
-        paddingTop: metrics.baseMargin * 3,
+        left: metrics.baseMargin,
+        paddingTop: metrics.baseMargin,
         paddingRight: metrics.baseMargin,
-        fontSize: fonts.base * 0.58,
+        fontSize: fonts.bar - 1,
         textAlign: 'left',
-        fontWeight: 'bold',
         bottom: metrics.baseMargin * 2,
         height: metrics.baseMargin * 22,
         width: metrics.baseMargin * 38,
+        color: colors.primaryGreen,
+        
+        
 
     },
-    preco:{
-        left: metrics.baseMargin * 2,
-        paddingTop: metrics.baseMargin * 3,
-        paddingRight: metrics.baseMargin,
-        fontSize: fonts.base * 0.58,
-        textAlign: 'center',
-        fontWeight: 'bold',
-        paddingBottom: metrics.baseMargin * 2,
-        height: metrics.baseMargin * 50,
-        width: metrics.baseMargin * 25,
-
-    },
+    
 
 
     card: {
 
-        backgroundColor: colors.white,
-        height: metrics.baseMargin * 20,
-        width: metrics.baseMargin * 60,
-        borderRadius: metrics.baseRadius * 1.3,
+    height: metrics.baseMargin * 28,
+    width: metrics.baseMargin * 28,
+    marginTop: metrics.baseMargin * 2,
+    marginHorizontal: metrics.baseMargin * 1.4,
+    backgroundColor: colors.white,
+    borderRadius: metrics.baseRadius * 1.3,
+    
 
     },
+    image:{
+        position: 'absolute',
+        height: metrics.baseMargin * 15,
+        width: metrics.baseMargin * 28,
+        
+    }
 
 
 });
