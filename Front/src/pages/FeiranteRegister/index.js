@@ -85,15 +85,14 @@ class FeiranteRegister extends Component {
 						onChangeText={(e) => this.handleChange(e, 'password')}
 						secureTextEntry={true}
 					/>
-					<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-						onPress={() => this.pickImage()}>
-						<Text style={{ fontSize: 16, color: "#3E782B" }}>Escolher imagem para banca</Text>
-					</TouchableOpacity>
 					<View style={styles.Container3}>
-
-						<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+						<TouchableOpacity style={{ justifyContent: "center", alignItems: "center" }}
+							onPress={() => this.pickImage()}>
+							<Text style={{ fontSize: 16, color: "#3E782B" }}>Escolher imagem para banca</Text>
+						</TouchableOpacity>
+						<TouchableOpacity style={styles.button}
 							onPress={() => this.saveInfo()}>
-							<Text style={{ fontSize: 16, color: "#3E782B" }}>Próximo</Text>
+							<Text style={styles.buttonText}>Salvar</Text>
 						</TouchableOpacity>
 					</View>
 				</View>

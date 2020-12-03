@@ -1,7 +1,7 @@
 //este arquivo apresenta a estilização da tela ProductForm
 //declaração da estilização da tela ViewStand
 import {StyleSheet} from 'react-native';
-import {metrics,colors} from '../../styles';
+import { metrics, colors, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
     Container:{
@@ -31,11 +31,33 @@ const styles = StyleSheet.create({
         color : colors.primaryGreen,
         fontSize : 35,
     },
-    Container3:{
-        flex: 1,
+    Container3: {
+        flex: 2,
         alignItems: 'center',
         width: '100%',
-        paddingTop: 25,
+        marginTop: metrics.baseMargin * 10,
+        borderRadius: metrics.baseRadius,
+        padding: metrics.baseMargin,
+        margin: metrics.baseMargin,
+    },
+    button: {
+        borderRadius: metrics.baseRadius,
+        padding: metrics.baseMargin,
+        margin: metrics.baseMargin,
+        marginTop: metrics.baseMargin * 5,
+        justifyContent: 'space-between',
+        alignSelf: 'center',
+        backgroundColor: "#3E782B",
+        width: 120
+        // marginTop: metrics.baseMargin * 10,
+    },
+
+    buttonText: {
+        textAlign: 'center',
+        fontSize: fonts.base,
+        fontWeight: 'bold',
+        color: "#ffffff",
+
     },
 });
 

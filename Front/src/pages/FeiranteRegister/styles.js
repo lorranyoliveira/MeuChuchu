@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingTop: 30
     },
+    Container3:{
+        flex: 1,
+        alignItems: 'center',
+        width: '100%',
+        paddingTop: 10,
+    },
     textos:{
         fontSize: 18,
     },
@@ -34,6 +40,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         paddingTop: 25,
+    },
+    button: {
+        borderRadius: metrics.baseRadius,
+        padding: metrics.baseMargin,
+        margin: metrics.baseMargin,
+        marginTop: metrics.baseMargin * 5,
+        justifyContent: 'space-between',
+        alignSelf: 'center',
+        backgroundColor: "#3E782B",
+        width: 120
+        // marginTop: metrics.baseMargin * 10,
+    },
+
+    buttonText: {
+        textAlign: 'center',
+        fontSize: fonts.base,
+        fontWeight: 'bold',
+        color: "#ffffff",
+
     },
     
 });

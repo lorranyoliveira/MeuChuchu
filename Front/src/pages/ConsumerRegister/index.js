@@ -8,7 +8,6 @@ import Header from '../../components/header';
 import * as ImagePicker from 'expo-image-picker';
 import Button from '../../components/Button';
 import api from '../../services/api';
-import LZString from 'lz-string';
 
 
 // import { createStackNavigator } from 'react-navigation-stack';
@@ -88,15 +87,15 @@ class ConsumerRegister extends Component {
 
 					/>
 					<View style={styles.Container3}>
-						<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+						<TouchableOpacity style={{ justifyContent: "center", alignItems: "center" }}
 							onPress={() => this.pickImage()}>
 							<Text style={{ fontSize: 16, color: "#3E782B" }}>Escolher imagem de perfil</Text>
 						</TouchableOpacity>
 					</View>
 					<View style={styles.Container3}>
-						<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+						<TouchableOpacity style={styles.button}
 							onPress={() => this.saveInfo()}>
-							<Text style={{ fontSize: 16, color: "#3E782B" }}>Cadastrar</Text>
+							<Text style={styles.buttonText}>Salvar</Text>
 						</TouchableOpacity>
 					</View>
 				</View>

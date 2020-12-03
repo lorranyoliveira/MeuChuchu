@@ -97,16 +97,16 @@ class ProductForm extends Component {
 						onChangeText={(e) => this.handleChange(e, 'preco')}
 					/>
 					<View style={styles.Container3}>
-						<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-							onPress={() => this.pickImage()}>
-							<Text style={{ fontSize: 16, color: "#3E782B" }}>Escolher imagem para banca</Text>
-						</TouchableOpacity>
-
-						<TouchableOpacity style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-							onPress={() => this.saveInfo()}>
-							<Text style={{ fontSize: 16, color: "#3E782B" }}>Salvar</Text>
-						</TouchableOpacity>
-					</View>
+							<TouchableOpacity style={{ justifyContent: "center", alignItems: "center" }}
+								onPress={() => this.pickImage()}>
+								<Text style={{ fontSize: 16, color: "#3E782B" }}>Escolher imagem para produto</Text>
+							</TouchableOpacity>
+							
+							<TouchableOpacity style={ styles.button}
+								onPress={() => this.saveInfo()}>
+								<Text style={ styles.buttonText}>Salvar</Text>
+							</TouchableOpacity>
+						</View>
 				</View>
 			</View>
 		);

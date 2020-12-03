@@ -7,22 +7,23 @@ import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api'
 import ProductForm from '../ProductForm';
+import base64 from 'react-native-base64'
 
 //Declaração da estrutura da tela ViewStand
 
 ///////////DESCOMENTAR A PRÓXIMA LINHA//////////////
 // export default function ViewStand(id, user_id, user){ 
- let id = 2 //id é o id da banca selecionada
-  let user_id = 34 //user_id é o id do usuário que está logado
-  let user = true
+let id = 2 //id é o id da banca selecionada
+let user_id = 34 //user_id é o id do usuário que está logado
+let user = true
 
 
-class ViewStand extends Component {  
+class ViewStand extends Component {
   constructor(props) {
     super(props)
     this.state = {
       modalContactOpen: false,
-      modalProductOpen: '',
+      modalProductOpen: false,
       isLoadingProduct: '',
       isLoadingStand: '',
       isSubmitingProduct: '',
@@ -36,31 +37,31 @@ class ViewStand extends Component {
   }
 
   componentDidMount = async () => {
-      const apiAsyncStand = async () => {
-        try {
-          const response = await api.get('mostrar_banca/' + id)
-            .then((response) => response.data)
-            .then((json) => this.handleChange(json, 'data'))
-            .catch((error) => console.error(error))
-            .finally(() => this.handleChange(false, 'isLoadingStand'));
-        } catch (error) {
-          console.log(error);
-        }
+    const apiAsyncStand = async () => {
+      try {
+        const response = await api.get('mostrar_banca/' + id)
+          .then((response) => response.data)
+          .then((json) => this.handleChange(json, 'data'))
+          .catch((error) => console.error(error))
+          .finally(() => this.handleChange(false, 'isLoadingStand'));
+      } catch (error) {
+        console.log(error);
       }
-      apiAsyncStand();
-  
-      const apiAsyncProduct = async () => {
-        try {
-          const response = await api.get('mostrar_produto/' + id)
-            .then((response) => response.data)
-            .then((json) => this.handleChange(json, 'product'))
-            .catch((error) => console.error(error))
-            .finally(() => this.handleChange(false, 'loadingProduct'));
-        } catch (error) {
-          console.log(error);
-        }
+    }
+    apiAsyncStand();
+
+    const apiAsyncProduct = async () => {
+      try {
+        const response = await api.get('mostrar_produto/' + id)
+          .then((response) => response.data)
+          .then((json) => this.handleChange(json, 'product'))
+          .catch((error) => console.error(error))
+          .finally(() => this.handleChange(false, 'loadingProduct'));
+      } catch (error) {
+        console.log(error);
       }
-      apiAsyncProduct();
+    }
+    apiAsyncProduct();
   }
 
   DeleteProduct = async (product_id) => {
@@ -107,6 +108,16 @@ class ViewStand extends Component {
     }
   }
 
+  displayImage = (item) => {
+    const image = base64.decode(item.image)
+    return (
+      <Image
+        // style={styles.ProductImage}
+        source={{ uri: `data:image/jpg;base64,${image}` }}
+      />
+    )
+  }
+
   handleChange = (event, name) => {
     const value = event.target ? event.target.value : event;
     this.setState({ [name]: value });
@@ -114,8 +125,8 @@ class ViewStand extends Component {
 
   render() {
     const {
-      modalContactOpen, modalProductOpen, isLoadingProduct, isLoadingStand, isSubmitingProduct, product, data 
-    } = this.state 
+      modalContactOpen, modalProductOpen, isLoadingProduct, isLoadingStand, isSubmitingProduct, product, data
+    } = this.state
     return (
       <View style={styles.Container}>
         <View style={styles.Container1}>
@@ -214,7 +225,7 @@ class ViewStand extends Component {
                 )}
               </View>
               <View style={styles.ClosePos}>
-                <TouchableOpacity onPress={(e) => this.handleChange(e, 'ModalContactOpen')}>
+                <TouchableOpacity onPress={(e) => this.setState({modalContactOpen: false})}>
                   <MaterialCommunityIcons
                     name="close-circle"
                     size={50}
@@ -287,7 +298,7 @@ class ViewStand extends Component {
           <View style={styles.PlusPos}>
             {this.compare() == 1 ?
               <TouchableOpacity>
-                <MaterialCommunityIcons onPress={() =>  this.handleChange(true, 'submitingProduct'), (e) => this.handleChange(e, 'ProductOpen')}
+                <MaterialCommunityIcons onPress={() => this.handleChange(true, 'submitingProduct'), (e) => this.handleChange(e, 'ProductOpen')}
                   name="plus-circle"
                   size={40}
                   style={styles.PlusButton}
@@ -298,7 +309,9 @@ class ViewStand extends Component {
         )}
 
         <View style={styles.ButtonPos} >
-          <TouchableOpacity style={styles.Button} onPress={(e) => this.handleChange(e, 'ModalContactOpen')}>
+          <TouchableOpacity
+            style={styles.Button}
+            onPress={(e) => this.setState({modalContactOpen: true})}>
             <Text style={styles.ButtonText}>Contate o vendedor</Text>
           </TouchableOpacity>
         </View>
@@ -313,8 +326,8 @@ class ViewStand extends Component {
               renderItem={({ item }) => (
                 <View style={styles.Product}>
                   <Image
-                    source={require('../../image/frutas_verduras.jpg')}
                     style={styles.ProductImage}
+                    source={require('../../image/feira.png')}
                   />
                   <View style={styles.ProductText}>
                     <Text style={styles.ProductName}>

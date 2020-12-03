@@ -44,7 +44,26 @@ const styles = StyleSheet.create({
     pickerComponente: {
         height: 80,
         width: 350,
-    }
+    },
+    button: {
+        borderRadius: metrics.baseRadius,
+        padding: metrics.baseMargin,
+        margin: metrics.baseMargin,
+        marginTop: metrics.baseMargin * 5,
+        justifyContent: 'space-between',
+        alignSelf: 'center',
+        backgroundColor: "#3E782B",
+        width: 120
+        // marginTop: metrics.baseMargin * 10,
+    },
+
+    buttonText: {
+        textAlign: 'center',
+        fontSize: fonts.base,
+        fontWeight: 'bold',
+        color: "#ffffff",
+
+    },
 });
 
 export default styles;
