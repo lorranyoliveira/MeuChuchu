@@ -15,6 +15,7 @@ import storeInformations from './pages/storeInformations';
 import Search from './pages/Search';
 import Login from './pages/Login';
 import ViewStand from './pages/ViewStand';
+import Profile from './pages/Profile';
 
 
 const HomeStack = createStackNavigator();
@@ -82,11 +83,66 @@ const HomeScreen = () => (
         ),
       }} />
   </HomeStack.Navigator>
-  // const AppStack = createMaterialBottomTabNavigator();
-
-  
 )
+
+const ProfileStack = createStackNavigator();
+const ProfileScreen = () => (
+  <ProfileStack.Screen name="Profile" component={Profile} />
+
+)
+const SearchStack = createStackNavigator();
+const SearchScreen = () => (
+  <SearchStack.Screen name="Profile" component={Profile} />
+
+)
+const AppStack = createMaterialBottomTabNavigator();
+
+
 export default function Routes() {
+  //const isLoged = await AsyncStorage.getItem(login)
+  const isLoged = true
+  if (isLoged) {
+    return (
+      <NavigationContainer>
+        <AppStack.Navigator
+          headerMode="none"
+          activeColor={colors.selected}
+          inactiveColor={colors.gray}
+          barStyle={{ backgroundColor: colors.btnBlue }}
+          shifting={false}
+        >
+          <AppStack.Screen
+            name="Busca"
+            component={SearchScreen}
+            options={{
+              tabBarIcon: () => (
+                <AntDesign style={styles.Logout}
+                    name="search1"
+                    size={24}
+                    color={colors.primaryGreen}
+
+                />
+              ),
+            }}
+          />
+          <AppStack.Screen
+            name="Perfil"
+            component={ProfileScreen}
+            options={{
+              tabBarIcon: () => (
+                <AntDesign style={styles.Logout}
+                    name="user"
+                    size={24}
+                    color={colors.primaryGreen}
+
+                />
+              ),
+            }}
+          />
+        </AppStack.Navigator>
+      </NavigationContainer>
+    );
+  }
   return (
     <NavigationContainer>
       <HomeScreen />
