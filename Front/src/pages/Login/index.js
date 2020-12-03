@@ -8,6 +8,8 @@ import { colors } from '../../styles';
 import Header from '../../components/header';
 import api from '../../services/api';
 import { AsyncStorage } from '@react-native-community/async-storage';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 
@@ -15,6 +17,8 @@ const Login = () => {
     
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
+    const navigation = useNavigation();
+
     
 
     async function routeLogin () {
@@ -72,6 +76,7 @@ const Login = () => {
                         text="Criar cadastro"
                         width={200}
                         backgroundColor={colors.lightPink}
+                        onPress={()=>navigation.navigate('FeiranteRegister')}
                     />
 
                 </View>

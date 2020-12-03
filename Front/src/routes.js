@@ -14,9 +14,9 @@ import FeiranteRegister from './pages/FeiranteRegister';
 import storeInformations from './pages/storeInformations';
 import Search from './pages/Search';
 import Login from './pages/Login';
+import ViewStand from './pages/ViewStand';
 
 
-<<<<<<< HEAD
 const HomeStack = createStackNavigator();
 const HomeScreen = () => (
   <HomeStack.Navigator>
@@ -69,7 +69,22 @@ const HomeScreen = () => (
           </TouchableOpacity>
         ),
       }} />
+      <HomeStack.Screen name="ViewStand" component={ViewStand}
+      options={{
+        title: 'Minha Banca',
+        headerRight: () => (
+          <TouchableOpacity
+            // onPress={() => { sethelpModalVisible(!helpModalVisible); }}
+            style={{ margin: metrics.baseMargin * 2 }}
+          >
+            <FontAwesome name="question" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        ),
+      }} />
   </HomeStack.Navigator>
+  // const AppStack = createMaterialBottomTabNavigator();
+
+  
 )
 export default function Routes() {
   return (
@@ -78,21 +93,3 @@ export default function Routes() {
     </NavigationContainer>
   );
 }
-=======
-//declaração das páginas de navegação
-
-let id = 2 //id é o id da banca selecionada
-let user_id = 34 //user_id é o id do usuário que está logado
-let user = true
-
-export default function Routes(){
-    return(
-        <NavigationContainer>
-            <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="ViewStand" component={ViewStand}/>
-            </AppStack.Navigator>
-        </NavigationContainer>
-
-    );
-}
->>>>>>> 13cec9e8212ab8755271d4a4c963e94f6815fe94

@@ -7,11 +7,14 @@ import Button2 from '../../components/Button2';
 import { colors } from '../../styles';
 import styles from './styles';
 import Header from '../../components/header';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 
 const storeInformations = () => {
     const [text, setText, selectedValue, setSelectedValue] = useState("Açougue");
+    const navigation = useNavigation();
 
     return (
         <View style={styles.Container}>
@@ -51,6 +54,8 @@ const storeInformations = () => {
                         text="Cadastrar"
                         width={200}
                         backgroundColor={colors.primaryGreen}
+                        onPress={()=>navigation.navigate('ViewStand')}
+                        
                     />
                 </View>
             </View>
